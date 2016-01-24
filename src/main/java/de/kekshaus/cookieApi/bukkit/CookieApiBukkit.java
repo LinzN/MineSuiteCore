@@ -70,8 +70,8 @@ public class CookieApiBukkit extends JavaPlugin {
 
 	@Override
 	public void onDisable() {
-		HandlerList.unregisterAll(instance);
 		Starter.stop();
+		HandlerList.unregisterAll(instance);
 	}
 
 	private void registerListeners() {

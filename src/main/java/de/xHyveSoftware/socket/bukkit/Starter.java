@@ -6,6 +6,7 @@ import de.xHyveSoftware.socket.bukkit.sockets.P2PServer;
 import de.xHyveSoftware.socket.bukkit.sockets.P2PServers;
 
 public class Starter {
+	private static P2PServer server;
 
 	public static void start() {
 		String ip = CookieApiBukkit.getInstance().getConfig().getString("p2p.ip");
@@ -16,11 +17,12 @@ public class Starter {
 		String multicastip = CookieApiBukkit.getInstance().getConfig().getString("p2p.castip");
 
 		P2PServers.init(multicastip, multicastport, networkInterface);
-		P2PServer server = new P2PServer(new DiscoveryTable(), ip, port);
+		server = new P2PServer(new DiscoveryTable(), ip, port);
 		server.start();
 	}
 
 	public static void stop() {
+		P2PServers.removeServer(server);
 		for (P2PServer server : P2PServers.getServers()) {
 			server.shutdown();
 		}

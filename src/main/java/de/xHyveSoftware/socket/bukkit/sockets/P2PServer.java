@@ -28,7 +28,6 @@ public class P2PServer extends Thread {
 
 	public P2PServer(DiscoveryTable discoveryTable, String ip, int port) {
 		Logger.info("New P2PServer with port " + port);
-
 		this.discoveryTable = discoveryTable;
 		this.port = port;
 		this.ip = ip;
