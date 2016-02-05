@@ -7,13 +7,20 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.spigotmc.event.player.PlayerSpawnLocationEvent;
 
 import de.kekshaus.cookieApi.bukkit.CookieApiBukkit;
 import de.kekshaus.cookieApi.bukkit.managerApi.OtherApi;
+import de.kekshaus.cookieApi.guild.utils.GuildNameTag;
 
 public class BukkitListener implements Listener {
+
+	@EventHandler
+	public void onChange(PlayerChangedWorldEvent e) {
+		GuildNameTag.getAPI().refresh();
+	}
 
 	@EventHandler
 	public void playerConnect(PlayerSpawnLocationEvent e) {
@@ -40,8 +47,6 @@ public class BukkitListener implements Listener {
 			OtherApi.ignoreTeleport.add(e.getEntity());
 		}
 	}
-
-
 
 	@EventHandler(priority = EventPriority.MONITOR)
 	public void playerJoin(final PlayerJoinEvent event) {
