@@ -7,9 +7,6 @@ load: STARTUP
 commands:
   capi:
     description: Suit command
-  gm:
-    description: Gamemode
-    aliases: [gamemode, gmode]
 permissions:
     cookieApi.team:
         description: Alle User Permissions

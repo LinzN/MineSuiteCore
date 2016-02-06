@@ -4,7 +4,6 @@ import org.bukkit.World;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 import de.kekshaus.cookieApi.bukkit.commands.CApiCommand;
-import de.kekshaus.cookieApi.bukkit.commands.GamemodeCommand;
 import de.kekshaus.cookieApi.bukkit.listeners.BukkitListener;
 import de.kekshaus.cookieApi.bukkit.listeners.server.PipeLiveStreamListener;
 import de.kekshaus.cookieApi.bukkit.listeners.server.ServerStreamChatListener;
@@ -41,7 +40,6 @@ public class CookieApiBukkit extends JavaPlugin {
 		saveDefaultConfig();
 		registerListeners();
 		getCommand("capi").setExecutor(new CApiCommand());
-		getCommand("gm").setExecutor(new GamemodeCommand());
 		PacketManager.registerPacket(BungeeStreamTeleportEvent.class);
 		PacketManager.registerPacket(BungeeStreamDataEvent.class);
 		PacketManager.registerPacket(BungeeStreamOtherEvent.class);
