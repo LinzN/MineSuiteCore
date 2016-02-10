@@ -15,11 +15,6 @@
             <systemPath>${project.basedir}/lib/spigot-1.8.jar</systemPath>
             <optional>true</optional>
         </dependency>
-        <dependency>
-        	<groupId>de.cookieapi</groupId>
-        	<artifactId>cookieApiGuild</artifactId>
-        	<version>0.1.1</version>
-        </dependency>
     </dependencies>
     <build>
         <finalName>${project.name}</finalName>

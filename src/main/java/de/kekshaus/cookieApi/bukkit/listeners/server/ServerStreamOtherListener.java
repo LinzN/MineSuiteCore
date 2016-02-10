@@ -6,7 +6,6 @@ import java.io.IOException;
 
 import de.kekshaus.cookieApi.bukkit.CookieApiBukkit;
 import de.kekshaus.cookieApi.bukkit.socketEvents.ServerStreamOtherEvent;
-import de.kekshaus.cookieApi.guild.objects.ObjectMapping;
 import de.xHyveSoftware.socket.bukkit.api.annotation.Channel;
 import de.xHyveSoftware.socket.bukkit.api.annotation.PacketHandler;
 import de.xHyveSoftware.socket.bukkit.api.listener.AbstractPacketListener;
@@ -23,16 +22,6 @@ public class ServerStreamOtherListener extends AbstractPacketListener {
 						try {
 
 							task = in.readUTF();
-
-							if (task.equals("AddToGuild")) {
-								String player = in.readUTF();
-								String guild = in.readUTF();
-								if (ObjectMapping.isPlayerOnline(player)) {
-									ObjectMapping.getGuildPlayer(player).updateGuild(ObjectMapping.getGuild(guild),
-											false);
-								}
-
-							}
 
 						} catch (IOException e) {
 							e.printStackTrace();
