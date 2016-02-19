@@ -21,4 +21,7 @@ public class MessageDB {
 			+ "Du kannst deine Gilde nicht verlassen. Bitte setze einen neuen Gildenbesitzer!";
 	public static String LEAVE_GUILD = "§a" + "Du hast die Gilde verlassen!";
 	public static String NOT_IN_A_GUILD = "§6" + "Du bist in keiner Gilde!";
+	public static String Teleport_Home = "§e" + "Willkommen an deinem Home!";
+	public static String Teleport_Warp = "§e" + "Willkommen an dem Warppunkt!";
+	public static String Teleport_Teleport = "§e" + "Du wurdest teleportiert!";
 }

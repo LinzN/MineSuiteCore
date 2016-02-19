@@ -3,17 +3,8 @@ package de.kekshaus.cookieApi.bukkit;
 import org.bukkit.World;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
+
 import de.kekshaus.cookieApi.bukkit.commands.CApiCommand;
-import de.kekshaus.cookieApi.bukkit.listeners.BukkitListener;
-import de.kekshaus.cookieApi.bukkit.listeners.server.PipeLiveStreamListener;
-import de.kekshaus.cookieApi.bukkit.listeners.server.ServerStreamTeleportListener;
-import de.kekshaus.cookieApi.bukkit.socketEvents.BungeeStreamDataEvent;
-import de.kekshaus.cookieApi.bukkit.socketEvents.BungeeStreamTeleportEvent;
-import de.kekshaus.cookieApi.bukkit.socketEvents.PipeLiveStreamEvent;
-import de.kekshaus.cookieApi.bukkit.socketEvents.ServerStreamTeleportEvent;
-import de.kekshaus.cookieApi.bukkit.tasks.PipeStreamScheduler;
-import de.xHyveSoftware.socket.bukkit.Starter;
-import de.xHyveSoftware.socket.bukkit.api.PacketManager;
 
 public class CookieApiBukkit extends JavaPlugin {
 	private static CookieApiBukkit instance;
@@ -32,14 +23,6 @@ public class CookieApiBukkit extends JavaPlugin {
 		saveDefaultConfig();
 		registerListeners();
 		getCommand("capi").setExecutor(new CApiCommand());
-		PacketManager.registerPacket(BungeeStreamTeleportEvent.class);
-		PacketManager.registerPacket(BungeeStreamDataEvent.class);
-		PacketManager.registerPacket(ServerStreamTeleportEvent.class);
-		PacketManager.registerPacket(PipeLiveStreamEvent.class);
-		PacketManager.registerListener(new ServerStreamTeleportListener());
-		PacketManager.registerListener(new PipeLiveStreamListener());
-		Starter.start();
-		new PipeStreamScheduler();
 		servername = this.getConfig().getString("plugin.servername");
 		database = this.getConfig().getString("sql.database");
 		host = this.getConfig().getString("sql.host");
@@ -52,12 +35,10 @@ public class CookieApiBukkit extends JavaPlugin {
 
 	@Override
 	public void onDisable() {
-		Starter.stop();
 		HandlerList.unregisterAll(instance);
 	}
 
 	private void registerListeners() {
-		getServer().getPluginManager().registerEvents(new BukkitListener(), this);
 	}
 
 	public static CookieApiBukkit getInstance() {
