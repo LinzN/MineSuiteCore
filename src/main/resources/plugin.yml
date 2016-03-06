@@ -3,7 +3,7 @@ main : de.kekshaus.cookieApi.bukkit.CookieApiBukkit
 version: ${project.version}
 description: cookieApi for BungeeCord
 author: Kekshaus
-load: STARTUP
+load: POSTWORLD
 commands:
   capi:
     description: Suit command
