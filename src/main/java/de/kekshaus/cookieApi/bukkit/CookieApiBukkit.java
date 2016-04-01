@@ -39,6 +39,7 @@ public class CookieApiBukkit extends JavaPlugin {
 	}
 
 	private void registerListeners() {
+		getServer().getPluginManager().registerEvents(new OtherListener(), this);
 	}
 
 	public static CookieApiBukkit getInstance() {
