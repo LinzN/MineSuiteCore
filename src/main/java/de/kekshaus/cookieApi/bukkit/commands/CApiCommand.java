@@ -19,14 +19,14 @@ public class CApiCommand implements CommandExecutor {
 	public boolean onCommand(final CommandSender sender, Command cmnd, String label, final String[] args) {
 		this.executorServiceCommands.submit(new Runnable() {
 			public void run() {
-				Plugin bukkit = Bukkit.getPluginManager().getPlugin("CookieApiBukkit");
-				Plugin ban = Bukkit.getPluginManager().getPlugin("CookieApiBan");
-				Plugin chat = Bukkit.getPluginManager().getPlugin("CookieApiChat");
-				Plugin guild = Bukkit.getPluginManager().getPlugin("CookieApiGuild");
-				Plugin home = Bukkit.getPluginManager().getPlugin("CookieApiHome");
-				Plugin portal = Bukkit.getPluginManager().getPlugin("CookieApiPortal");
-				Plugin teleport = Bukkit.getPluginManager().getPlugin("CookieApiTeleport");
-				Plugin warp = Bukkit.getPluginManager().getPlugin("CookieApiWarp");
+				Plugin bukkit = Bukkit.getPluginManager().getPlugin("cookieApiBukkit");
+				Plugin ban = Bukkit.getPluginManager().getPlugin("cookieApiBan");
+				Plugin chat = Bukkit.getPluginManager().getPlugin("cookieApiChat");
+				Plugin guild = Bukkit.getPluginManager().getPlugin("cookieApiGuild");
+				Plugin home = Bukkit.getPluginManager().getPlugin("cookieApiHome");
+				Plugin portal = Bukkit.getPluginManager().getPlugin("cookieApiPortal");
+				Plugin teleport = Bukkit.getPluginManager().getPlugin("cookieApiTeleport");
+				Plugin warp = Bukkit.getPluginManager().getPlugin("cookieApiWarp");
 				sender.sendMessage(ChatColor.DARK_PURPLE + "CookieApi Version:");
 				if (bukkit != null) {
 					sender.sendMessage(ChatColor.DARK_GREEN + "CookieApiBukkit: " + ChatColor.DARK_PURPLE
