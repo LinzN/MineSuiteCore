@@ -1,6 +1,6 @@
 name: cookieApiBukkit
 main : de.kekshaus.cookieApi.bukkit.CookieApiBukkit
-version: ${project.version}
+version: ${project.version}.b${build.number}
 description: cookieApi for BungeeCord
 author: Kekshaus
 load: POSTWORLD
