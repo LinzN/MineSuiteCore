@@ -27,6 +27,7 @@ public class CApiCommand implements CommandExecutor {
 				Plugin portal = Bukkit.getPluginManager().getPlugin("cookieApiPortal");
 				Plugin teleport = Bukkit.getPluginManager().getPlugin("cookieApiTeleport");
 				Plugin warp = Bukkit.getPluginManager().getPlugin("cookieApiWarp");
+				Plugin land = Bukkit.getPluginManager().getPlugin("cookieApiLand");
 				sender.sendMessage(ChatColor.DARK_PURPLE + "CookieApi Version:");
 				if (bukkit != null) {
 					sender.sendMessage(ChatColor.DARK_GREEN + "CookieApiBukkit: " + ChatColor.DARK_PURPLE
@@ -59,6 +60,10 @@ public class CApiCommand implements CommandExecutor {
 				if (warp != null) {
 					sender.sendMessage(ChatColor.DARK_GREEN + "CookieApiWarp: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
 							+ warp.getDescription().getVersion());
+				}
+				if (land != null) {
+					sender.sendMessage(ChatColor.DARK_GREEN + "CookieApiLand: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
+							+ land.getDescription().getVersion());
 				}
 			}
 		});
