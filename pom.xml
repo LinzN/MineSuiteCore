@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cookieApiBukkit</artifactId>
+    <artifactId>XeonSuiteBukkit</artifactId>
     <packaging>jar</packaging>
-    <name>cookieApiBukkit</name>
+    <name>XeonSuiteBukkit</name>
 
 	<repositories>
       <repository>
@@ -60,7 +60,7 @@
         </plugins>
     </build>
     <version>1</version>
-    <groupId>de.cookieapi</groupId>
+    <groupId>de.nlinz.xeonSuite</groupId>
     <dependencyManagement>
     	<dependencies>
     	</dependencies>

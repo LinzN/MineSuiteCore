@@ -1,4 +1,4 @@
-package de.kekshaus.cookieApi.bukkit.commands;
+package de.nlinz.xeonSuite.bukkit.commands;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

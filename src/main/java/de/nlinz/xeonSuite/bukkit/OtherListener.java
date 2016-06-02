@@ -1,4 +1,4 @@
-package de.kekshaus.cookieApi.bukkit;
+package de.nlinz.xeonSuite.bukkit;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;

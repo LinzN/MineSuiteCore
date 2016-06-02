@@ -1,7 +1,7 @@
-name: cookieApiBukkit
-main : de.kekshaus.cookieApi.bukkit.CookieApiBukkit
+name: XeonSuiteBukkit
+main : de.nlinz.xeonSuite.bukkit.XeonSuiteBukkit
 version: ${project.version}.b${build.number}
-description: cookieApi for BungeeCord
+description: Suite for BungeeCord
 author: Kekshaus
 load: POSTWORLD
 commands:

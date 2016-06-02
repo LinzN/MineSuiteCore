@@ -1,13 +1,13 @@
-package de.kekshaus.cookieApi.bukkit;
+package de.nlinz.xeonSuite.bukkit;
 
 import org.bukkit.World;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import de.kekshaus.cookieApi.bukkit.commands.CApiCommand;
+import de.nlinz.xeonSuite.bukkit.commands.CApiCommand;
 
-public class CookieApiBukkit extends JavaPlugin {
-	private static CookieApiBukkit instance;
+public class XeonSuiteBukkit extends JavaPlugin {
+	private static XeonSuiteBukkit instance;
 	private static String servername;
 	private static String database;
 	private static String host;
@@ -42,7 +42,7 @@ public class CookieApiBukkit extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new OtherListener(), this);
 	}
 
-	public static CookieApiBukkit getInstance() {
+	public static XeonSuiteBukkit getInstance() {
 		return instance;
 	}
 
@@ -80,7 +80,7 @@ public class CookieApiBukkit extends JavaPlugin {
 	}
 
 	public static boolean isWorldAllowed(World world) {
-		if (CookieApiBukkit.getInstance().getConfig().getStringList("plugin.disabled-worlds")
+		if (XeonSuiteBukkit.getInstance().getConfig().getStringList("plugin.disabled-worlds")
 				.contains(world.getName())) {
 			return false;
 		} else {

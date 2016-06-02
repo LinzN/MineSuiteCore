@@ -1,4 +1,4 @@
-package de.kekshaus.cookieApi.bukkit.utils;
+package de.nlinz.xeonSuite.bukkit.utils;
 
 import org.bukkit.GameMode;
 import org.bukkit.Location;
