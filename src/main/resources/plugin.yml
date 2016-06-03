@@ -5,7 +5,7 @@ description: Suite for BungeeCord
 author: Kekshaus
 load: POSTWORLD
 commands:
-  capi:
+  xeonSuite:
     description: Suit command
 permissions:
     cookieApi.team:

@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import de.nlinz.xeonSocketBukkit.mask.XeonSocketBukkitMask;
 import de.nlinz.xeonSuite.bukkit.commands.CApiCommand;
+import de.nlinz.xeonSuite.bukkit.database.XeonConnectionSetup;
 
 public class XeonSuiteBukkit extends JavaPlugin {
 	private static XeonSuiteBukkit instance;
@@ -21,8 +22,6 @@ public class XeonSuiteBukkit extends JavaPlugin {
 	public void onEnable() {
 		instance = this;
 		saveDefaultConfig();
-		registerListeners();
-		getCommand("capi").setExecutor(new CApiCommand());
 		database = this.getConfig().getString("sql.database");
 		host = this.getConfig().getString("sql.host");
 		port = this.getConfig().getString("sql.port");
@@ -30,6 +29,13 @@ public class XeonSuiteBukkit extends JavaPlugin {
 		password = this.getConfig().getString("sql.password");
 		debugmode = this.getConfig().getBoolean("sql.debugmode");
 		warmuptime = this.getConfig().getInt("plugin.warmuptime");
+		if (XeonConnectionSetup.create()) {
+
+			registerListeners();
+			getCommand("xeonSuite").setExecutor(new CApiCommand());
+		} else {
+			this.setEnabled(false);
+		}
 	}
 
 	@Override
