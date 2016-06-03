@@ -4,11 +4,11 @@ import org.bukkit.World;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import de.nlinz.xeonSocketBukkit.mask.XeonSocketBukkitMask;
 import de.nlinz.xeonSuite.bukkit.commands.CApiCommand;
 
 public class XeonSuiteBukkit extends JavaPlugin {
 	private static XeonSuiteBukkit instance;
-	private static String servername;
 	private static String database;
 	private static String host;
 	private static String port;
@@ -23,7 +23,6 @@ public class XeonSuiteBukkit extends JavaPlugin {
 		saveDefaultConfig();
 		registerListeners();
 		getCommand("capi").setExecutor(new CApiCommand());
-		servername = this.getConfig().getString("plugin.servername");
 		database = this.getConfig().getString("sql.database");
 		host = this.getConfig().getString("sql.host");
 		port = this.getConfig().getString("sql.port");
@@ -47,7 +46,7 @@ public class XeonSuiteBukkit extends JavaPlugin {
 	}
 
 	public static String getServerName() {
-		return servername;
+		return XeonSocketBukkitMask.inst().getServerName();
 	}
 
 	public static String getDataBase() {
