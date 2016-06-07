@@ -8,36 +8,36 @@ commands:
   xeonSuite:
     description: Suit command
 permissions:
-    cookieApi.team:
+    xeonSuite.team:
         description: Alle User Permissions
         children:
-            cookieApi.ban.team: true
-            cookieApi.home.team: true
-            cookieApi.warp.team: true
-            cookieApi.teleport.team: true
-            cookieApi.portal.team: true
-            cookieApi.chat.team: true
-            cookieApi.guild.team: true
-            cookieApi.bypass: true
-            cookieApi.ban.notifyinfo: true
-            cookieApi.api.command: true
-    cookieApi.user:
+            xeonSuite.ban.team: true
+            xeonSuite.home.team: true
+            xeonSuite.warp.team: true
+            xeonSuite.teleport.team: true
+            xeonSuite.portal.team: true
+            xeonSuite.chat.team: true
+            xeonSuite.guild.team: true
+            xeonSuite.bypass: true
+            xeonSuite.ban.notifyinfo: true
+            xeonSuite.api.command: true
+    xeonSuite.user:
         description: Alle User Permissions
         children:
-            cookieApi.ban.user: true
-            cookieApi.home.user: true
-            cookieApi.warp.user: true
-            cookieApi.teleport.user: true
-            cookieApi.portal.user: true
-            cookieApi.chat.user: true
-            cookieApi.api.command:: true
+            xeonSuite.ban.user: true
+            xeonSuite.home.user: true
+            xeonSuite.warp.user: true
+            xeonSuite.teleport.user: true
+            xeonSuite.portal.user: true
+            xeonSuite.chat.user: true
+            xeonSuite.api.command:: true
 
-    cookieApi.bypass:
+    xeonSuite.bypass:
         description: Bypass permission
         default: op
-    cookieApi.ban.notifyinfo:
+    xeonSuite.ban.notifyinfo:
         description: Baninfo permission
         default: op
-    cookieApi.api.command:
+    xeonSuite.api.command:
         description: Baninfo permission
         default: op
