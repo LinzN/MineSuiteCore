@@ -1,13 +1,13 @@
 package de.nlinz.xeonSuite.bukkit.configurations;
 
 public class XeonConfigs {
-	private static XeonCustomConfig guild;
+	private static CustomConfig guild;
 
-	public static void setGuildConfig(XeonCustomConfig guildConfig) {
+	public static void setGuildConfig(CustomConfig guildConfig) {
 		guild = guildConfig;
 	}
 
-	public static XeonCustomConfig getGuildConfig() {
+	public static CustomConfig getGuildConfig() {
 		return guild;
 	}
 }

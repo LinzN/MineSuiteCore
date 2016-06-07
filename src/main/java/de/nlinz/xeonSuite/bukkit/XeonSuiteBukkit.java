@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import de.nlinz.xeonSocketBukkit.mask.XeonSocketBukkitMask;
 import de.nlinz.xeonSuite.bukkit.commands.CApiCommand;
-import de.nlinz.xeonSuite.bukkit.configurations.XeonConfigSetup;
+import de.nlinz.xeonSuite.bukkit.configurations.ConfigSetup;
 import de.nlinz.xeonSuite.bukkit.database.XeonConnectionSetup;
 
 public class XeonSuiteBukkit extends JavaPlugin {
@@ -33,7 +33,7 @@ public class XeonSuiteBukkit extends JavaPlugin {
 		if (XeonConnectionSetup.create()) {
 			registerListeners();
 			getCommand("xeonSuite").setExecutor(new CApiCommand());
-			new XeonConfigSetup(this);
+			new ConfigSetup(this);
 		} else {
 			this.setEnabled(false);
 		}
