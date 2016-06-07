@@ -124,4 +124,17 @@ public class CustomConfig extends YamlConfiguration {
 
 	}
 
+	public void saveAndReload() {
+		save();
+		reload();
+	}
+
+	public String getLanguageString(String path, String defaultValue) {
+		if (!this.contains(path)) {
+			this.set(path, defaultValue);
+		}
+		return this.getString(path);
+
+	}
+
 }

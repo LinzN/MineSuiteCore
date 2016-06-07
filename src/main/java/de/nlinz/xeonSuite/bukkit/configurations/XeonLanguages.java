@@ -1,6 +1,7 @@
 package de.nlinz.xeonSuite.bukkit.configurations;
 
 public class XeonLanguages {
+	private static CustomConfig global;
 	private static CustomConfig guild;
 	private static CustomConfig chat;
 	private static CustomConfig home;
@@ -8,6 +9,10 @@ public class XeonLanguages {
 	private static CustomConfig teleport;
 	private static CustomConfig warp;
 	private static CustomConfig ban;
+
+	public static void setGlobalLanguage(CustomConfig globalLanguage) {
+		global = globalLanguage;
+	}
 
 	public static void setGuildLanguage(CustomConfig guildLanguage) {
 		guild = guildLanguage;
@@ -35,6 +40,10 @@ public class XeonLanguages {
 
 	public static void setBanLanguage(CustomConfig banLanguage) {
 		ban = banLanguage;
+	}
+
+	public static CustomConfig getGlobalLanguage() {
+		return global;
 	}
 
 	public static CustomConfig getGuildLanguage() {
