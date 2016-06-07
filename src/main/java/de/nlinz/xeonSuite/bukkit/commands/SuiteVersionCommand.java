@@ -12,7 +12,7 @@ import org.bukkit.plugin.Plugin;
 
 import net.md_5.bungee.api.ChatColor;
 
-public class CApiCommand implements CommandExecutor {
+public class SuiteVersionCommand implements CommandExecutor {
 	public ThreadPoolExecutor executorServiceCommands = new ThreadPoolExecutor(1, 1, 250L, TimeUnit.MILLISECONDS,
 			new LinkedBlockingQueue<Runnable>());
 

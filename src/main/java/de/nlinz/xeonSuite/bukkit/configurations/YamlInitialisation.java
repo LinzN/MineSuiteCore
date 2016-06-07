@@ -4,9 +4,9 @@ import java.io.File;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ConfigSetup {
+public class YamlInitialisation {
 
-	public ConfigSetup(JavaPlugin plugin) {
+	public YamlInitialisation(JavaPlugin plugin) {
 		File configDirectory = new File(plugin.getDataFolder(), "configs");
 		if (!configDirectory.exists()) {
 			configDirectory.mkdir();
@@ -20,26 +20,27 @@ public class ConfigSetup {
 		/* Configs */
 		CustomConfig guildConfig = new CustomConfig(plugin, configDirectory, "guildConfig.yml");
 		XeonConfigs.setGuildConfig(guildConfig);
+
 		/* Languages */
 		CustomConfig guildLanguage = new CustomConfig(plugin, languageDirectory, "guildLanguage.yml");
 		XeonLanguages.setGuildLanguage(guildLanguage);
 
 		CustomConfig chatLanguage = new CustomConfig(plugin, languageDirectory, "chatLanguage.yml");
-		XeonLanguages.setGuildLanguage(chatLanguage);
+		XeonLanguages.setChatLanguage(chatLanguage);
 
 		CustomConfig homeLanguage = new CustomConfig(plugin, languageDirectory, "homeLanguage.yml");
-		XeonLanguages.setGuildLanguage(homeLanguage);
+		XeonLanguages.setHomeLanguage(homeLanguage);
 
 		CustomConfig portalLanguage = new CustomConfig(plugin, languageDirectory, "portalLanguage.yml");
-		XeonLanguages.setGuildLanguage(portalLanguage);
+		XeonLanguages.setPortalLanguage(portalLanguage);
 
 		CustomConfig teleportLanguage = new CustomConfig(plugin, languageDirectory, "teleportLanguage.yml");
-		XeonLanguages.setGuildLanguage(teleportLanguage);
+		XeonLanguages.setTeleportLanguage(teleportLanguage);
 
 		CustomConfig warpLanguage = new CustomConfig(plugin, languageDirectory, "warpLanguage.yml");
-		XeonLanguages.setGuildLanguage(warpLanguage);
+		XeonLanguages.setWarpLanguage(warpLanguage);
 
 		CustomConfig banLanguage = new CustomConfig(plugin, languageDirectory, "banLanguage.yml");
-		XeonLanguages.setGuildLanguage(banLanguage);
+		XeonLanguages.setBanLanguage(banLanguage);
 	}
 }

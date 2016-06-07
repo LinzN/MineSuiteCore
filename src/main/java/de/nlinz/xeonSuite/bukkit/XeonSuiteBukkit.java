@@ -5,8 +5,8 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.nlinz.xeonSocketBukkit.mask.XeonSocketBukkitMask;
-import de.nlinz.xeonSuite.bukkit.commands.CApiCommand;
-import de.nlinz.xeonSuite.bukkit.configurations.ConfigSetup;
+import de.nlinz.xeonSuite.bukkit.commands.SuiteVersionCommand;
+import de.nlinz.xeonSuite.bukkit.configurations.YamlInitialisation;
 import de.nlinz.xeonSuite.bukkit.database.XeonConnectionSetup;
 
 public class XeonSuiteBukkit extends JavaPlugin {
@@ -32,8 +32,8 @@ public class XeonSuiteBukkit extends JavaPlugin {
 		warmuptime = this.getConfig().getInt("plugin.warmuptime");
 		if (XeonConnectionSetup.create()) {
 			registerListeners();
-			getCommand("xeonSuite").setExecutor(new CApiCommand());
-			new ConfigSetup(this);
+			getCommand("xeonSuite").setExecutor(new SuiteVersionCommand());
+			new YamlInitialisation(this);
 		} else {
 			this.setEnabled(false);
 		}
