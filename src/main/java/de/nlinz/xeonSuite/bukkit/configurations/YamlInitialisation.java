@@ -4,7 +4,7 @@ import java.io.File;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import de.nlinz.xeonSuite.bukkit.utils.languages.GlobalLanguage;
+import de.nlinz.xeonSuite.bukkit.utils.languages.GeneralLanguage;
 import de.nlinz.xeonSuite.bukkit.utils.languages.HomeLanguage;
 import de.nlinz.xeonSuite.bukkit.utils.languages.TeleportLanguage;
 import de.nlinz.xeonSuite.bukkit.utils.languages.WarpLanguage;
@@ -27,7 +27,7 @@ public class YamlInitialisation {
 		XeonConfigs.setGuildConfig(guildConfig);
 
 		/* Languages */
-		CustomConfig globalLanguage = new CustomConfig(plugin, languageDirectory, "globalLanguage.yml");
+		CustomConfig globalLanguage = new CustomConfig(plugin, languageDirectory, "generalLanguage.yml");
 		XeonLanguages.setGlobalLanguage(globalLanguage);
 
 		CustomConfig guildLanguage = new CustomConfig(plugin, languageDirectory, "guildLanguage.yml");
@@ -51,7 +51,7 @@ public class YamlInitialisation {
 		CustomConfig banLanguage = new CustomConfig(plugin, languageDirectory, "banLanguage.yml");
 		XeonLanguages.setBanLanguage(banLanguage);
 
-		GlobalLanguage.setup();
+		GeneralLanguage.setup();
 		globalLanguage.saveAndReload();
 
 		HomeLanguage.setup();

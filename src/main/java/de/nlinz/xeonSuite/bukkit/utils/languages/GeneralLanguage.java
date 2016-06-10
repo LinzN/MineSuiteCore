@@ -2,7 +2,7 @@ package de.nlinz.xeonSuite.bukkit.utils.languages;
 
 import de.nlinz.xeonSuite.bukkit.configurations.XeonLanguages;
 
-public class GlobalLanguage {
+public class GeneralLanguage {
 
 	public static String TELEPORT_TIMER = null;
 	public static String TELEPORT_MOVE_CANCEL = null;
