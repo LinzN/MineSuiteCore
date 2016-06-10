@@ -16,18 +16,6 @@ public class CustomConfig extends YamlConfiguration {
 	private JavaPlugin plugin;
 
 	/**
-	 * Creates new PluginFile, without defaults
-	 * 
-	 * @param plugin
-	 *            - Your plugin
-	 * @param fileName
-	 *            - Name of the file
-	 */
-	public CustomConfig(JavaPlugin plugin, String fileName) {
-		this(plugin, fileName, null);
-	}
-
-	/**
 	 * Creates new PluginFile, with defaults
 	 * 
 	 * @param plugin
@@ -43,24 +31,10 @@ public class CustomConfig extends YamlConfiguration {
 		this(plugin, directory, fileName, null);
 	}
 
-	/**
-	 * Creates new PluginFile, with defaults
-	 * 
-	 * @param plugin
-	 *            - Your plugin
-	 * @param fileName
-	 *            - Name of the file
-	 * @param defaultsName
-	 *            - Name of the defaults
-	 */
-	public CustomConfig(JavaPlugin plugin, String fileName, String defaultsName) {
-		this(plugin, plugin.getDataFolder(), fileName, defaultsName);
-	}
-
 	public CustomConfig(JavaPlugin plugin, File directory, String fileName, String defaultsName) {
 		this.plugin = plugin;
 		this.defaults = defaultsName;
-		this.file = new File(plugin.getDataFolder(), fileName);
+		this.file = new File(directory, fileName);
 		reload();
 	}
 
