@@ -12,8 +12,8 @@
 			<url>https://repository.enigmar.de/</url>
 		</repository>
 	</repositories>
-    <dependencies>
-    <!--Spigot API-->
+	<dependencies>
+		<!--Spigot API -->
 		<dependency>
 			<groupId>org.spigotmc-1_12</groupId>
 			<artifactId>spigot</artifactId>
@@ -45,6 +45,7 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -60,7 +61,8 @@
 			</plugin>
 		</plugins>
 	</build>
-	<version>1.0.1</version>
+
+	<version>1.0.1-${build.number}</version>
 	<groupId>de.linzn</groupId>
 	<dependencyManagement>
 		<dependencies>

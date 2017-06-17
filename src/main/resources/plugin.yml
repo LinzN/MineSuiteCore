@@ -1,6 +1,6 @@
 name: XeonSuiteBukkit
 main : de.nlinz.xeonSuite.bukkit.XeonSuiteBukkit
-version: ${project.version}.b${build.number}
+version: ${project.version}
 description: Suite for BungeeCord
 author: Kekshaus
 load: POSTWORLD
