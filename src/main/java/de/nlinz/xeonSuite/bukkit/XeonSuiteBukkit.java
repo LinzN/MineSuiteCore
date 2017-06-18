@@ -1,6 +1,5 @@
 package de.nlinz.xeonSuite.bukkit;
 
-import org.bstats.Metrics;
 import org.bukkit.World;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
