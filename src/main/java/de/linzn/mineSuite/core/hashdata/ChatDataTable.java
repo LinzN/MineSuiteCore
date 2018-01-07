@@ -1,9 +1,9 @@
-package de.nlinz.xeonSuite.bukkit.utils.tables;
+package de.linzn.mineSuite.core.hashdata;
 
 import java.util.HashMap;
 
 public class ChatDataTable {
-	private static HashMap<String, Boolean> isafk = new HashMap<String, Boolean>();
+	private static HashMap<String, Boolean> isafk = new HashMap<>();
 
 	public static boolean isAfk(String player) {
 		if (isafk.containsKey(player)) {

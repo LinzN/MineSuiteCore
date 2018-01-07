@@ -1,44 +1,42 @@
-name: XeonSuiteBukkit
-main : de.nlinz.xeonSuite.bukkit.XeonSuiteBukkit
+name: MineSuiteCore
+main : MineSuiteCore
 version: ${project.version}
 description: Suite for BungeeCord
 author: Kekshaus
 load: POSTWORLD
-depend: [XeonSocketClient]
 commands:
-  xeonSuite:
+  minesuite:
     description: Suit command
 permissions:
-    xeonSuite.team:
+    mineSuite.team:
         description: Alle User Permissions
         children:
-            xeonSuite.ban.team: true
-            xeonSuite.home.team: true
-            xeonSuite.warp.team: true
-            xeonSuite.teleport.team: true
-            xeonSuite.portal.team: true
-            xeonSuite.chat.team: true
-            xeonSuite.guild.team: true
-            xeonSuite.bypass: true
-            xeonSuite.ban.notifyinfo: true
-            xeonSuite.api.command: true
-    xeonSuite.user:
+            mineSuite.ban.team: true
+            mineSuite.home.team: true
+            mineSuite.warp.team: true
+            mineSuite.teleport.team: true
+            mineSuite.portal.team: true
+            mineSuite.chat.team: true
+            mineSuite.guild.team: true
+            mineSuite.bypass: true
+            mineSuite.ban.notifyinfo: true
+            mineSuite.api.command: true
+    mineSuite.user:
         description: Alle User Permissions
         children:
-            xeonSuite.ban.user: true
-            xeonSuite.home.user: true
-            xeonSuite.warp.user: true
-            xeonSuite.teleport.user: true
-            xeonSuite.portal.user: true
-            xeonSuite.chat.user: true
-            xeonSuite.api.command:: true
-
-    xeonSuite.bypass:
+            mineSuite.ban.user: true
+            mineSuite.home.user: true
+            mineSuite.warp.user: true
+            mineSuite.teleport.user: true
+            mineSuite.portal.user: true
+            mineSuite.chat.user: true
+            mineSuite.api.command: true
+    mineSuite.bypass:
         description: Bypass permission
         default: op
-    xeonSuite.ban.notifyinfo:
+    mineSuite.ban.notifyinfo:
         description: Baninfo permission
         default: op
-    xeonSuite.api.command:
+    mineSuite.api.command:
         description: Baninfo permission
         default: op
