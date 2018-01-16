@@ -25,7 +25,9 @@ public class MineSuiteCorePlugin extends JavaPlugin {
             registerListeners();
             getCommand("minesuite").setExecutor(new VersionCommand());
             this.mineJSocketClient = new MineJSocketClient();
+            this.mineJSocketClient.jClientConnection1.setEnable();
         } else {
+            this.mineJSocketClient.jClientConnection1.setDisable();
             this.setEnabled(false);
         }
     }
