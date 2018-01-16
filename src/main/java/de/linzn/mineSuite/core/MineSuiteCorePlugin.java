@@ -2,7 +2,7 @@ package de.linzn.mineSuite.core;
 
 import de.linzn.mineSuite.core.commands.VersionCommand;
 import de.linzn.mineSuite.core.configurations.MineConfigs;
-import de.linzn.mineSuite.core.database.XeonConnectionSetup;
+import de.linzn.mineSuite.core.database.mysql.MySQLConnectionSetup;
 import de.linzn.mineSuite.core.listener.SignColorListener;
 import de.linzn.mineSuite.core.socket.MineJSocketClient;
 import org.bukkit.event.HandlerList;
@@ -21,7 +21,7 @@ public class MineSuiteCorePlugin extends JavaPlugin {
     public void onEnable() {
         instance = this;
         this.mineConfigs = new MineConfigs(this);
-        if (XeonConnectionSetup.create()) {
+        if (MySQLConnectionSetup.create()) {
             registerListeners();
             getCommand("minesuite").setExecutor(new VersionCommand());
             this.mineJSocketClient = new MineJSocketClient();

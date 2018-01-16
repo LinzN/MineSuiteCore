@@ -1,4 +1,4 @@
-package de.linzn.mineSuite.core.hashdata;
+package de.linzn.mineSuite.core.database.hashDatabase;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -12,7 +12,7 @@ public class TeleportDataTable {
 	public static HashSet<Player> ignoreTeleport = new HashSet<>();
 	public static HashMap<Player, Location> lastTeleportLocation = new HashMap<>();
 
-	public static void RemovePlayer(Player player) {
+	public static void removePlayer(Player player) {
 		pendingTeleport.remove(player.getName());
 		pendingTeleportLocations.remove(player.getName());
 		ignoreTeleport.remove(player);

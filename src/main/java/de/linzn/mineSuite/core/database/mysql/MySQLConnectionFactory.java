@@ -1,16 +1,16 @@
-package de.linzn.mineSuite.core.database;
+package de.linzn.mineSuite.core.database.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class XeonConnectionFactory {
+public class MySQLConnectionFactory {
 
     private final String url;
     private final String user;
     private final String pass;
 
-    public XeonConnectionFactory(String url, String user, String pass) {
+    public MySQLConnectionFactory(String url, String user, String pass) {
         this.url = url;
         this.user = user;
         this.pass = pass;

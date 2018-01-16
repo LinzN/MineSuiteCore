@@ -1,4 +1,4 @@
-package de.linzn.mineSuite.core.database;
+package de.linzn.mineSuite.core.database.mysql;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -6,18 +6,18 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class XeonConnectionManager {
+public class MySQLConnectionManager {
 
-    public final static XeonConnectionManager DEFAULT = new XeonConnectionManager();
+    public final static MySQLConnectionManager DEFAULT = new MySQLConnectionManager();
 
-    private final Map<String, XeonConnectionHandler> map;
+    private final Map<String, MySQLConnectionHandler> map;
 
-    public XeonConnectionManager() {
+    public MySQLConnectionManager() {
         this.map = new ConcurrentHashMap<>();
     }
 
-    public XeonConnectionHandler getHandler(String key, XeonConnectionFactory f) {
-        XeonConnectionHandler handler = new XeonConnectionHandler(key, f);
+    public MySQLConnectionHandler getHandler(String key, MySQLConnectionFactory f) {
+        MySQLConnectionHandler handler = new MySQLConnectionHandler(key, f);
         map.put(key, handler);
         return handler;
     }
@@ -30,8 +30,8 @@ public class XeonConnectionManager {
         map.get(handle).release(c);
     }
 
-    public XeonConnectionHandler getHandler(String key) {
-        XeonConnectionHandler handler = map.get(key);
+    public MySQLConnectionHandler getHandler(String key) {
+        MySQLConnectionHandler handler = map.get(key);
         if (handler == null) {
             throw new NoSuchElementException();
         }
@@ -39,7 +39,7 @@ public class XeonConnectionManager {
     }
 
     public void shutdown() {
-        for (XeonConnectionHandler handler : map.values()) {
+        for (MySQLConnectionHandler handler : map.values()) {
             handler.shutdown();
         }
         map.clear();

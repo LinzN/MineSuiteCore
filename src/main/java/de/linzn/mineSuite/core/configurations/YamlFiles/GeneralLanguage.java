@@ -15,20 +15,20 @@ public class GeneralLanguage {
     public String Teleport_Warp;
 
     public GeneralLanguage(CustomYamlConfig generalConfig) {
-        TELEPORT_TIMER = generalConfig.getLanguageString("TeleportTimer",
+        TELEPORT_TIMER = generalConfig.getString("TeleportTimer",
                 "§2" + "Du wirst in §e{TIME}§2 Sekunden teleportiert! Nicht bewegen!");
-        TELEPORT_MOVE_CANCEL = generalConfig.getLanguageString("TeleportMoveCancel",
+        TELEPORT_MOVE_CANCEL = generalConfig.getString("TeleportMoveCancel",
                 "§6" + "Abgebrochen! Du hast dich bewegt.");
-        NO_PERMISSIONS = generalConfig.getLanguageString("NoPermissions",
+        NO_PERMISSIONS = generalConfig.getString("NoPermissions",
                 "§4" + "Du hast dafür keine Berechtigung!");
 
-        Teleport_Home = generalConfig.getLanguageString("TeleportSuccessHome",
+        Teleport_Home = generalConfig.getString("TeleportSuccessHome",
                 "§e" + "Willkommen an deinem Home!");
 
-        Teleport_Teleport = generalConfig.getLanguageString("TeleportSuccess",
+        Teleport_Teleport = generalConfig.getString("TeleportSuccess",
                 "§e" + "Du wurdest teleportiert!");
 
-        Teleport_Warp = generalConfig.getLanguageString("TeleportSuccessWarp",
+        Teleport_Warp = generalConfig.getString("TeleportSuccessWarp",
                 "§e" + "Willkommen an dem Warppunkt!");
 
 

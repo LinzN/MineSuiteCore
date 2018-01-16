@@ -1,4 +1,4 @@
-package de.linzn.mineSuite.core.hashdata;
+package de.linzn.mineSuite.core.database.hashDatabase;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -12,7 +12,7 @@ public class HomeDataTable {
 	public static HashSet<Player> ignoreHome = new HashSet<>();
 	public static HashMap<Player, Location> lastHomeLocation = new HashMap<>();
 
-	public static void RemovePlayer(Player player) {
+	public static void removePlayer(Player player) {
 		pendingHome.remove(player.getName());
 		pendingHomeLocations.remove(player.getName());
 		ignoreHome.remove(player);

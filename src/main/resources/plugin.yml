@@ -1,5 +1,5 @@
 name: MineSuiteCore
-main : MineSuiteCore
+main : de.linzn.mineSuite.core.MineSuiteCorePlugin
 version: ${project.version}
 description: Suite for BungeeCord
 author: Kekshaus

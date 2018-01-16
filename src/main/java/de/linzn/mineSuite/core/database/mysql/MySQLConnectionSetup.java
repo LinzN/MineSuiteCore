@@ -1,4 +1,4 @@
-package de.linzn.mineSuite.core.database;
+package de.linzn.mineSuite.core.database.mysql;
 
 import de.linzn.mineSuite.core.MineSuiteCorePlugin;
 import org.bukkit.Bukkit;
@@ -7,22 +7,22 @@ import org.bukkit.ChatColor;
 import java.sql.Connection;
 import java.sql.Statement;
 
-public class XeonConnectionSetup {
+public class MySQLConnectionSetup {
     public static boolean create() {
         return mysql();
 
     }
 
     public static boolean mysql() {
-        String db = MineSuiteCorePlugin.getDataBase();
-        String port = MineSuiteCorePlugin.getPort();
-        String host = MineSuiteCorePlugin.getHost();
+        String db = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.SQL_DATABASE;
+        int port = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.SQL_PORT;
+        String host = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.SQL_HOST;
         String url = "jdbc:mysql://" + host + ":" + port + "/" + db;
-        String username = MineSuiteCorePlugin.getUsername();
-        String password = MineSuiteCorePlugin.getPassword();
-        XeonConnectionFactory factory = new XeonConnectionFactory(url, username, password);
-        XeonConnectionManager manager = XeonConnectionManager.DEFAULT;
-        XeonConnectionHandler handler = manager.getHandler("XeonSuite", factory);
+        String username = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.SQL_USER;
+        String password = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.SQL_PASSWORD;
+        MySQLConnectionFactory factory = new MySQLConnectionFactory(url, username, password);
+        MySQLConnectionManager manager = MySQLConnectionManager.DEFAULT;
+        MySQLConnectionHandler handler = manager.getHandler("XeonSuite", factory);
 
         try {
             Connection connection = handler.getConnection();

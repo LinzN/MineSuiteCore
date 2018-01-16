@@ -1,16 +1,16 @@
-package de.linzn.mineSuite.core.database;
+package de.linzn.mineSuite.core.database.mysql;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class XeonConnectionHandler {
+public class MySQLConnectionHandler {
 
     private final String name;
-    private final XeonConnectionFactory factory;
+    private final MySQLConnectionFactory factory;
     private final LinkedBlockingQueue<Connection> queue;
 
-    protected XeonConnectionHandler(String name, XeonConnectionFactory factory) {
+    protected MySQLConnectionHandler(String name, MySQLConnectionFactory factory) {
         this.name = name;
         this.factory = factory;
         this.queue = new LinkedBlockingQueue<>();

@@ -1,4 +1,4 @@
-package de.linzn.mineSuite.core.hashdata;
+package de.linzn.mineSuite.core.database.hashDatabase;
 
 import java.util.HashMap;
 
