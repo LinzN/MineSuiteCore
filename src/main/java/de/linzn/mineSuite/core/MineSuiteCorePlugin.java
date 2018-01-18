@@ -27,13 +27,13 @@ public class MineSuiteCorePlugin extends JavaPlugin {
             this.mineJSocketClient = new MineJSocketClient();
             this.mineJSocketClient.jClientConnection1.setEnable();
         } else {
-            this.mineJSocketClient.jClientConnection1.setDisable();
             this.setEnabled(false);
         }
     }
 
     @Override
     public void onDisable() {
+        this.mineJSocketClient.jClientConnection1.setDisable();
         HandlerList.unregisterAll(instance);
     }
 
