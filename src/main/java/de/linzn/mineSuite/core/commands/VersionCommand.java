@@ -1,3 +1,14 @@
+/*
+ * Copyright (C) 2018. MineGaming - All Rights Reserved
+ * You may use, distribute and modify this code under the
+ * terms of the LGPLv3 license, which unfortunately won't be
+ * written for another century.
+ *
+ *  You should have received a copy of the LGPLv3 license with
+ *  this file. If not, please write to: niklas.linz@enigmar.de
+ *
+ */
+
 package de.linzn.mineSuite.core.commands;
 
 import net.md_5.bungee.api.ChatColor;
@@ -58,7 +69,7 @@ public class VersionCommand implements CommandExecutor {
                         + ChatColor.BOLD + teleport.getDescription().getVersion());
             }
             if (warp != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuiteWarp: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteWarp: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
                         + warp.getDescription().getVersion());
             }
 
