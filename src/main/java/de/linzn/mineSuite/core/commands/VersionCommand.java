@@ -61,6 +61,12 @@ public class VersionCommand implements CommandExecutor {
                 sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuiteWarp: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
                         + warp.getDescription().getVersion());
             }
+
+            sender.sendMessage(ChatColor.GREEN + "Written with love by Kekshaus");
+            sender.sendMessage(ChatColor.GREEN + "For more MineSuite informations, check this out:");
+            sender.sendMessage(ChatColor.GREEN + "MineGaming - " + ChatColor.YELLOW + ChatColor.BOLD
+                    + "https://www.MineGaming.de");
+            sender.sendMessage(ChatColor.GREEN + "You want cookies? Sorry they're all out :(");
         });
 
         return false;

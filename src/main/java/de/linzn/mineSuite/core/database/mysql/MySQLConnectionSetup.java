@@ -22,10 +22,11 @@ public class MySQLConnectionSetup {
         String password = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.SQL_PASSWORD;
         MySQLConnectionFactory factory = new MySQLConnectionFactory(url, username, password);
         MySQLConnectionManager manager = MySQLConnectionManager.DEFAULT;
-        MySQLConnectionHandler handler = manager.getHandler("XeonSuite", factory);
+        MySQLConnectionHandler mineSuiteCoreHandler = manager.getHandler("MineSuiteCore", factory);
+        manager.getHandler("MineSuiteWarp", factory);
 
         try {
-            Connection connection = handler.getConnection();
+            Connection connection = mineSuiteCoreHandler.getConnection();
             String warp = "CREATE TABLE IF NOT EXISTS warps (player VARCHAR(100), warp_name VARCHAR(100), server VARCHAR(100), world text, x double, y double, z double, yaw float, pitch float, visible int, PRIMARY KEY (`warp_name`));";
             String teleport = "CREATE TABLE IF NOT EXISTS spawns (Id int NOT NULL AUTO_INCREMENT, spawntype VARCHAR(100), server VARCHAR(100), world text, x double, y double, z double, yaw float, pitch float, visible int, PRIMARY KEY (Id));";
             String portal = "CREATE TABLE IF NOT EXISTS portals (portalname VARCHAR(100), server VARCHAR(100), type VARCHAR(20), destination VARCHAR(100), world VARCHAR(100), filltype VARCHAR(100) DEFAULT 'AIR', xmax INT(11), xmin INT(11), ymax INT(11), ymin INT(11), zmax INT(11), zmin INT(11), CONSTRAINT pk_portalname PRIMARY KEY (portalname));";
@@ -42,7 +43,7 @@ public class MySQLConnectionSetup {
             action.executeUpdate(guild2);
             action.executeUpdate(guild3);
             action.close();
-            handler.release(connection);
+            mineSuiteCoreHandler.release(connection);
 
             return true;
 
