@@ -35,6 +35,7 @@ public class MySQLConnectionSetup {
         MySQLConnectionManager manager = MySQLConnectionManager.DEFAULT;
         MySQLConnectionHandler mineSuiteCoreHandler = manager.getHandler("MineSuiteCore", factory);
         manager.getHandler("MineSuiteWarp", factory);
+        manager.getHandler("MineSuiteHome", factory);
 
         try {
             Connection connection = mineSuiteCoreHandler.getConnection();
