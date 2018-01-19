@@ -30,14 +30,14 @@ public class VersionCommand implements CommandExecutor {
     public boolean onCommand(final CommandSender sender, Command cmnd, String label, final String[] args) {
         this.executorServiceCommands.submit(() -> {
             Plugin corePlugin = Bukkit.getPluginManager().getPlugin("MineSuiteCore");
-            Plugin ban = Bukkit.getPluginManager().getPlugin("XeonSuiteBan");
-            Plugin chat = Bukkit.getPluginManager().getPlugin("XeonSuiteChat");
-            Plugin guild = Bukkit.getPluginManager().getPlugin("XeonSuiteGuild");
-            Plugin home = Bukkit.getPluginManager().getPlugin("XeonSuiteHome");
-            Plugin portal = Bukkit.getPluginManager().getPlugin("XeonSuitePortal");
-            Plugin teleport = Bukkit.getPluginManager().getPlugin("XeonSuiteTeleport");
-            Plugin warp = Bukkit.getPluginManager().getPlugin("XeonSuiteWarp");
-            sender.sendMessage(ChatColor.DARK_PURPLE + "XeonSuite Version:");
+            Plugin ban = Bukkit.getPluginManager().getPlugin("MineSuiteBan");
+            Plugin chat = Bukkit.getPluginManager().getPlugin("MineSuiteChat");
+            Plugin guild = Bukkit.getPluginManager().getPlugin("MineSuiteGuild");
+            Plugin home = Bukkit.getPluginManager().getPlugin("MineSuiteHome");
+            Plugin portal = Bukkit.getPluginManager().getPlugin("MineSuitePortal");
+            Plugin teleport = Bukkit.getPluginManager().getPlugin("MineSuiteSpawn");
+            Plugin warp = Bukkit.getPluginManager().getPlugin("MineSuiteWarp");
+            sender.sendMessage(ChatColor.DARK_PURPLE + "MineSuite Version:");
 
 
             if (corePlugin != null) {
@@ -45,27 +45,27 @@ public class VersionCommand implements CommandExecutor {
                         + ChatColor.BOLD + corePlugin.getDescription().getVersion());
             }
             if (ban != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuiteBan: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteBan: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
                         + ban.getDescription().getVersion());
             }
             if (chat != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuiteChat: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteChat: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
                         + chat.getDescription().getVersion());
             }
             if (guild != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuiteGuild: " + ChatColor.DARK_PURPLE
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteGuild: " + ChatColor.DARK_PURPLE
                         + ChatColor.BOLD + guild.getDescription().getVersion());
             }
             if (home != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuiteHome: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteHome: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
                         + home.getDescription().getVersion());
             }
             if (portal != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuitePortal: " + ChatColor.DARK_PURPLE
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuitePortal: " + ChatColor.DARK_PURPLE
                         + ChatColor.BOLD + portal.getDescription().getVersion());
             }
             if (teleport != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "XeonSuiteTeleport: " + ChatColor.DARK_PURPLE
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteSpawn: " + ChatColor.DARK_PURPLE
                         + ChatColor.BOLD + teleport.getDescription().getVersion());
             }
             if (warp != null) {
