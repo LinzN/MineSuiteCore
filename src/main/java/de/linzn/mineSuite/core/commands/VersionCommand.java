@@ -35,7 +35,7 @@ public class VersionCommand implements CommandExecutor {
             Plugin guild = Bukkit.getPluginManager().getPlugin("MineSuiteGuild");
             Plugin home = Bukkit.getPluginManager().getPlugin("MineSuiteHome");
             Plugin portal = Bukkit.getPluginManager().getPlugin("MineSuitePortal");
-            Plugin teleport = Bukkit.getPluginManager().getPlugin("MineSuiteSpawn");
+            Plugin teleport = Bukkit.getPluginManager().getPlugin("MineSuiteTeleport");
             Plugin warp = Bukkit.getPluginManager().getPlugin("MineSuiteWarp");
             sender.sendMessage(ChatColor.DARK_PURPLE + "MineSuite Version:");
 
@@ -65,7 +65,7 @@ public class VersionCommand implements CommandExecutor {
                         + ChatColor.BOLD + portal.getDescription().getVersion());
             }
             if (teleport != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteSpawn: " + ChatColor.DARK_PURPLE
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteTeleport: " + ChatColor.DARK_PURPLE
                         + ChatColor.BOLD + teleport.getDescription().getVersion());
             }
             if (warp != null) {
