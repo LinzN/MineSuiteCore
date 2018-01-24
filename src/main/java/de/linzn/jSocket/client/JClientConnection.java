@@ -65,6 +65,11 @@ public class JClientConnection implements Runnable {
             } catch (IOException e2) {
                 this.closeConnection();
             }
+            /* For reduce cpu usage in idl */
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException ignored) {
+            }
         }
     }
 
