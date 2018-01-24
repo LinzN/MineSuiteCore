@@ -129,9 +129,12 @@ public class JClientConnection implements Runnable {
         if (!this.socket.isClosed() && this.socket.getRemoteSocketAddress() != null) {
             try {
                 this.socket.close();
-            } catch (IOException e) {
+            } catch (IOException ignored) {
             }
-            this.onDisconnect();
+            /* todo test this value */
+            if (this.keepAlive) {
+                this.onDisconnect();
+            }
         }
     }
 
