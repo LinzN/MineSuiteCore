@@ -22,7 +22,6 @@ public class MineConfigs {
     public GeneralConfig generalConfig;
     public GeneralLanguage generalLanguage;
     private CustomYamlConfig generalConfigFile;
-    private CustomYamlConfig generalLanguageFile;
 
 
     public MineConfigs(JavaPlugin plugin) {
@@ -36,13 +35,6 @@ public class MineConfigs {
         this.generalConfigFile = new CustomYamlConfig(plugin, plugin.getDataFolder(), "general.yml");
         this.generalConfig = new GeneralConfig(this.generalConfigFile);
         this.generalConfigFile.saveAndReload();
-
-
-
-        /* Languages */
-        generalLanguageFile = new CustomYamlConfig(plugin, plugin.getDataFolder(), "languageFile.yml");
-        this.generalLanguage = new GeneralLanguage(this.generalLanguageFile);
-        generalLanguageFile.saveAndReload();
 
     }
 }

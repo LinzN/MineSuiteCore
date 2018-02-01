@@ -11,37 +11,17 @@
 
 package de.linzn.mineSuite.core.configurations.YamlFiles;
 
-import de.linzn.mineSuite.core.utils.CustomYamlConfig;
+
+import net.md_5.bungee.api.ChatColor;
 
 public class GeneralLanguage {
+    public static String global_NO_PERMISSIONS = ChatColor.RED + "" + ChatColor.BOLD + "Du hast dafür keine Berechtigung!";
+    public static String global_COMMAND_PENDING = ChatColor.RED + "" + ChatColor.BOLD + "Bitte warte einen Augenblick :)";
 
-    public String TELEPORT_TIMER;
-    public String TELEPORT_MOVE_CANCEL;
-    public String NO_PERMISSIONS;
+    public static String teleport_TELEPORT_TIMER = ChatColor.YELLOW + "" + ChatColor.BOLD + "Du wirst gleich gebeamt! Achtung nicht bewegen ;)";
+    public static String teleport_TELEPORT_MOVE_CANCEL = ChatColor.RED + "" + ChatColor.BOLD + "Der Beam ist fehlgeschlagen. Die Partikel konnten nicht zugeordnet werden.";
+    public static String teleport_success = ChatColor.GREEN + "" + ChatColor.BOLD + "Du wurdest erfolgreich gebeamt :D";
+    /* Warp */
+    public static String warp_NO_WARP_ARGUMENT = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Warp angeben!";
 
-    public String Teleport_Home;
-
-    public String Teleport_Teleport;
-
-    public String Teleport_Warp;
-
-    public GeneralLanguage(CustomYamlConfig generalConfig) {
-        TELEPORT_TIMER = generalConfig.getString("TeleportTimer",
-                "§2" + "Du wirst in §e{TIME}§2 Sekunden teleportiert! Nicht bewegen!");
-        TELEPORT_MOVE_CANCEL = generalConfig.getString("TeleportMoveCancel",
-                "§6" + "Abgebrochen! Du hast dich bewegt.");
-        NO_PERMISSIONS = generalConfig.getString("NoPermissions",
-                "§4" + "Du hast dafür keine Berechtigung!");
-
-        Teleport_Home = generalConfig.getString("TeleportSuccessHome",
-                "§e" + "Willkommen an deinem Home!");
-
-        Teleport_Teleport = generalConfig.getString("TeleportSuccess",
-                "§e" + "Du wurdest teleportiert!");
-
-        Teleport_Warp = generalConfig.getString("TeleportSuccessWarp",
-                "§e" + "Willkommen an dem Warppunkt!");
-
-
-    }
 }

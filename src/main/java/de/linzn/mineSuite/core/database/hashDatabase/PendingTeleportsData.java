@@ -11,6 +11,8 @@
 
 package de.linzn.mineSuite.core.database.hashDatabase;
 
+import de.linzn.mineSuite.core.MineSuiteCorePlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 import java.util.HashMap;
@@ -21,13 +23,18 @@ public class PendingTeleportsData {
 
     public static HashMap<UUID, Location> pendingLocations = new HashMap<>();
     public static HashSet<UUID> ignoreActions = new HashSet<>();
-    public static HashMap<UUID, Location> checkMoveLocation = new HashMap<>();
+    public static HashSet<UUID> playerCommand = new HashSet<>();
+
+    public static void addCommandSpam(UUID playerUUID) {
+        playerCommand.add(playerUUID);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(MineSuiteCorePlugin.getInstance(), () -> playerCommand.remove(playerUUID), (long) MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.TELEPORT_WARMUP);
+    }
 
 
     public static void cleanPlayer(UUID playerUUID) {
         pendingLocations.remove(playerUUID);
         ignoreActions.remove(playerUUID);
-        checkMoveLocation.remove(playerUUID);
+        playerCommand.remove(playerUUID);
     }
 
 }
