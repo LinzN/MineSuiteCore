@@ -11,13 +11,15 @@
 
 package de.linzn.mineSuite.core.listener;
 
+import de.linzn.mineSuite.core.database.hashDatabase.PendingTeleportsData;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
-public class SignColorListener implements Listener {
+public class BukkitEventListener implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onSignChange(SignChangeEvent event) {
@@ -28,5 +30,10 @@ public class SignColorListener implements Listener {
                 event.setLine(forInt, line);
             }
         }
+    }
+
+    @EventHandler
+    public void onPlayerLeave(PlayerQuitEvent event) {
+        PendingTeleportsData.cleanPlayer(event.getPlayer().getUniqueId());
     }
 }

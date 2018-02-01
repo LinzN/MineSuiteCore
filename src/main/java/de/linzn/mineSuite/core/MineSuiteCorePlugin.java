@@ -14,7 +14,7 @@ package de.linzn.mineSuite.core;
 import de.linzn.mineSuite.core.commands.VersionCommand;
 import de.linzn.mineSuite.core.configurations.MineConfigs;
 import de.linzn.mineSuite.core.database.mysql.MySQLConnectionSetup;
-import de.linzn.mineSuite.core.listener.SignColorListener;
+import de.linzn.mineSuite.core.listener.BukkitEventListener;
 import de.linzn.mineSuite.core.socket.MineJSocketClient;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -49,7 +49,7 @@ public class MineSuiteCorePlugin extends JavaPlugin {
     }
 
     private void registerListeners() {
-        getServer().getPluginManager().registerEvents(new SignColorListener(), this);
+        getServer().getPluginManager().registerEvents(new BukkitEventListener(), this);
     }
 
     public MineConfigs getMineConfigs() {
