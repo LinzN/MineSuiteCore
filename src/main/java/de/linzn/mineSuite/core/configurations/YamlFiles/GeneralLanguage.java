@@ -18,10 +18,46 @@ public class GeneralLanguage {
     public static String global_NO_PERMISSIONS = ChatColor.RED + "" + ChatColor.BOLD + "Du hast dafür keine Berechtigung!";
     public static String global_COMMAND_PENDING = ChatColor.RED + "" + ChatColor.BOLD + "Bitte warte einen Augenblick :)";
 
+    /* Teleport */
     public static String teleport_TELEPORT_TIMER = ChatColor.YELLOW + "" + ChatColor.BOLD + "Du wirst gleich gebeamt! Achtung nicht bewegen ;)";
     public static String teleport_TELEPORT_MOVE_CANCEL = ChatColor.RED + "" + ChatColor.BOLD + "Der Beam ist fehlgeschlagen. Die Partikel konnten nicht zugeordnet werden.";
     public static String teleport_success = ChatColor.GREEN + "" + ChatColor.BOLD + "Du wurdest erfolgreich gebeamt :D";
-    /* Warp */
-    public static String warp_NO_WARP_ARGUMENT = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Warp angeben!";
 
+    public static String teleport_SETSPAWN_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen SpawnType angeben. Type: ServerSpawn, lobby";
+    public static String teleport_UNSETSPAWN_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen SpawnType angeben. Type: ServerSpawn oder lobby";
+    public static String teleport_TPA_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Spielernamen angeben. Beispiel: /tpa Hundemaunzen";
+    public static String teleport_TPAHERE_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Spielernamen angeben. Beispiel: /tpahere Hundemaunzen";
+    public static String teleport_TPHERE_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Spielernamen angeben. Beispiel: /tphere Kekshaus";
+
+    public static String teleport_TP_0 = ChatColor.GREEN + "" + ChatColor.BOLD + "Teleport Befehle:";
+    public static String teleport_TP_1 = ChatColor.YELLOW + "/tp <Playername>";
+    public static String teleport_TP_2 = ChatColor.YELLOW + "/tp <Playername> <Playername>";
+    public static String teleport_TP_3 = ChatColor.YELLOW + "/tp <X> <Y> <Z>";
+    public static String teleport_TP_4 = ChatColor.YELLOW + "/tp <World> <X> <Y> <Z>";
+    public static String teleport_TP_5 = ChatColor.YELLOW + "/tp <Server> <World> <X> <Y> <Z>";
+
+    /* Ban */
+    public static String ban_NO_VALID_TIME = ChatColor.RED + "" + ChatColor.BOLD + "Keine gültige Zeitangabe!";
+    public static String ban_BAN_PERM_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "/ban <Playername> <Grund>";
+    public static String ban_KICK_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "/kick <Playername> <Grund>";
+    public static String ban_MUTE_PERM_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "/mute <Playername> <Grund>";
+    public static String ban_BAN_TEMP_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "/tempban <Playername> <Dauer> <Grund>";
+    public static String ban_MUTE_TEMP_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "/tempmute <Playername> <Time> <Grund>";
+    public static String ban_UNBAN_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "/unban <Playername> <Grund>\"";
+    public static String ban_UNMUTE_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "/unmute <Playername> <Grund>";
+
+    /* Chat */
+    public static String chat_AFK_ON = ChatColor.GREEN + "" + ChatColor.BOLD + "Du wirst jetzt als abwesend makiert!";
+    public static String chat_AFK_OFF = ChatColor.GREEN + "" + ChatColor.BOLD + "Du wirst jetzt nicht mehr als abwesend makiert!";
+    public static String chat_SWITCH_DISABLED = ChatColor.RED + "" + ChatColor.BOLD + "Switch zu diesem Channel leider nicht möglich!";
+    public static String chat_SWITCH = ChatColor.GREEN + "" + ChatColor.BOLD + "Du schreibst jetzt im " + ChatColor.YELLOW + "{channel} " + ChatColor.GREEN + "" + ChatColor.BOLD + "Chat!";
+    public static String chat_NO_TEXT = ChatColor.RED + "" + ChatColor.BOLD + "Du musst schon einen Text angeben :D";
+    public static String chat_MSG_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Benutze: /tell <Spieler> <Text>";
+
+    /* Warp */
+    public static String warp_NO_WARP_ARGUMENT = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Warp angeben! Beispiel: /w lobby";
+
+    /* Portal */
+    public static String portal_SETPORTAL_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Benutze: /setportal [portalName] [portalType] [destination] <portalMaterial>";
+    public static String portal_UNSETPORTAL_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Benutze: /unsetportal [portalName]";
 }
