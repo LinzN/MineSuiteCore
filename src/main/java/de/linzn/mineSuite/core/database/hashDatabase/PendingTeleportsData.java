@@ -27,7 +27,7 @@ public class PendingTeleportsData {
 
     public static void addCommandSpam(UUID playerUUID) {
         playerCommand.add(playerUUID);
-        Bukkit.getScheduler().runTaskLaterAsynchronously(MineSuiteCorePlugin.getInstance(), () -> playerCommand.remove(playerUUID), (long) MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.TELEPORT_WARMUP);
+        Bukkit.getScheduler().runTaskLaterAsynchronously(MineSuiteCorePlugin.getInstance(), () -> playerCommand.remove(playerUUID), 40L);
     }
 
 

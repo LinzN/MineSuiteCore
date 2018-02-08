@@ -15,6 +15,7 @@ import de.linzn.mineSuite.core.commands.VersionCommand;
 import de.linzn.mineSuite.core.configurations.MineConfigs;
 import de.linzn.mineSuite.core.database.mysql.MySQLConnectionSetup;
 import de.linzn.mineSuite.core.listener.BukkitEventListener;
+import de.linzn.mineSuite.core.socket.JClientBungeeListener;
 import de.linzn.mineSuite.core.socket.MineJSocketClient;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -37,6 +38,7 @@ public class MineSuiteCorePlugin extends JavaPlugin {
             getCommand("minesuite").setExecutor(new VersionCommand());
             this.mineJSocketClient = new MineJSocketClient();
             this.mineJSocketClient.jClientConnection1.setEnable();
+            this.mineJSocketClient.jClientConnection1.registerIncomingDataListener("mineSuiteBungee", new JClientBungeeListener());
         } else {
             this.setEnabled(false);
         }

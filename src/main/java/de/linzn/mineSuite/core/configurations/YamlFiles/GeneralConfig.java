@@ -30,7 +30,6 @@ public class GeneralConfig {
     public String SQL_USER;
     public String SQL_PASSWORD;
     public String SQL_DATABASE;
-    public int TELEPORT_WARMUP;
 
     public GeneralConfig(CustomYamlConfig generalConfig) {
         BUNGEE_SERVER_NAME = (String) generalConfig.getConfigValue("general.bungeeServerName", "servernameInBungeecord");
@@ -46,8 +45,6 @@ public class GeneralConfig {
         SQL_USER = (String) generalConfig.getConfigValue("mysql.user", "minecraft");
         SQL_PASSWORD = (String) generalConfig.getConfigValue("mysql.password", "deinPW");
         SQL_DATABASE = (String) generalConfig.getConfigValue("mysql.database", "mineSuite");
-
-        TELEPORT_WARMUP = (int) generalConfig.getConfigValue("teleport.warmup", 2);
 
 
     }

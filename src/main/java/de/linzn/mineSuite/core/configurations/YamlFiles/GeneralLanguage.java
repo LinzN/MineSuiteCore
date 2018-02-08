@@ -17,6 +17,7 @@ import net.md_5.bungee.api.ChatColor;
 public class GeneralLanguage {
     public static String global_NO_PERMISSIONS = ChatColor.RED + "" + ChatColor.BOLD + "Du hast dafür keine Berechtigung!";
     public static String global_COMMAND_PENDING = ChatColor.RED + "" + ChatColor.BOLD + "Bitte warte einen Augenblick :)";
+    public static String global_NO_NUMBER = ChatColor.RED + "" + ChatColor.BOLD + "Dies ist leider keine Zahl!";
 
     /* Teleport */
     public static String teleport_TELEPORT_TIMER = ChatColor.YELLOW + "" + ChatColor.BOLD + "Du wirst gleich gebeamt! Achtung nicht bewegen ;)";
@@ -56,6 +57,8 @@ public class GeneralLanguage {
 
     /* Warp */
     public static String warp_NO_WARP_ARGUMENT = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Warp angeben! Beispiel: /w lobby";
+    public static String warp_SETWARP_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Warp angeben! Beispiel: /setwarp lobby";
+    public static String warp_UNSETWARP_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Du musst einen Warp angeben! Beispiel: /unsetwarp lobby";
 
     /* Portal */
     public static String portal_SETPORTAL_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Benutze: /setportal [portalName] [portalType] [destination] <portalMaterial>";
