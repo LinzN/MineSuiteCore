@@ -14,6 +14,7 @@ package de.linzn.mineSuite.core;
 import de.linzn.mineProfile.MineProfilePlugin;
 import de.linzn.mineProfile.core.PlayerDataAPI;
 import de.linzn.mineProfile.utils.HashDB;
+import de.linzn.mineSuite.core.configurations.YamlFiles.GeneralLanguage;
 import de.linzn.mineSuite.core.socket.JClientBungeeOutput;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -25,11 +26,15 @@ public class CoreManager {
     public static void confirmTeleport(UUID playerUUID, String targetServer) {
         MineSuiteCorePlugin.getInstance().getLogger().info("Receive confirm request for: " + playerUUID.toString());
         String thisServer = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.BUNGEE_SERVER_NAME;
+        Player player = Bukkit.getPlayer(playerUUID);
+        if (player != null) {
+            player.sendMessage(GeneralLanguage.teleport_PREPARE);
+        }
+
         if (thisServer.equalsIgnoreCase(targetServer)) {
             MineSuiteCorePlugin.getInstance().getLogger().info("Send confirm callback for: " + playerUUID.toString());
             JClientBungeeOutput.sendTeleportConfirm(playerUUID, targetServer);
         } else {
-            Player player = Bukkit.getPlayer(playerUUID);
             if (player != null) {
                 if (!MineProfilePlugin.inst().getCookieConfig().disabledWorlds.contains(player.getWorld().getName())) {
                     PlayerDataAPI.unloadProfile(player, true);

@@ -20,7 +20,7 @@ public class GeneralLanguage {
     public static String global_NO_NUMBER = ChatColor.RED + "" + ChatColor.BOLD + "Dies ist leider keine Zahl!";
 
     /* Teleport */
-    public static String teleport_TELEPORT_TIMER = ChatColor.YELLOW + "" + ChatColor.BOLD + "Du wirst gleich gebeamt! Achtung nicht bewegen ;)";
+    public static String teleport_PREPARE = ChatColor.YELLOW + "" + ChatColor.BOLD + "Aktion wird vorbereitet. Nicht bewegen ;)";
     public static String teleport_TELEPORT_MOVE_CANCEL = ChatColor.RED + "" + ChatColor.BOLD + "Der Beam ist fehlgeschlagen. Die Partikel konnten nicht zugeordnet werden.";
     public static String teleport_success = ChatColor.GREEN + "" + ChatColor.BOLD + "Du wurdest erfolgreich gebeamt :D";
 
