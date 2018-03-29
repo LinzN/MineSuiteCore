@@ -167,6 +167,22 @@ public class JClientConnection implements Runnable {
         });
     }
 
+    public void unregisterIncomingDataListener(IncomingDataListener dataInputListener) {
+        ChannelDataEventPacket searched = null;
+        for (ChannelDataEventPacket dataEvent : this.dataInputListeners) {
+            if (dataEvent.incomingDataListener == dataInputListener) {
+                searched = dataEvent;
+            }
+        }
+        if (searched != null) {
+            this.dataInputListeners.remove(searched);
+        }
+    }
+
+    public void unregisterConnectionListener(ConnectionListener connectionListener) {
+        this.connectionListeners.remove(connectionListener);
+    }
+
     public void registerIncomingDataListener(String channel, IncomingDataListener dataInputListener) {
         this.dataInputListeners.add(new ChannelDataEventPacket(channel, dataInputListener));
     }
