@@ -40,44 +40,44 @@ public class LocationUtil {
 
     static {
         HOLLOW_MATERIALS.add(Material.AIR);
-        HOLLOW_MATERIALS.add(Material.SAPLING);
+        HOLLOW_MATERIALS.add(Material.LEGACY_SAPLING);
         HOLLOW_MATERIALS.add(Material.POWERED_RAIL);
         HOLLOW_MATERIALS.add(Material.DETECTOR_RAIL);
-        HOLLOW_MATERIALS.add(Material.LONG_GRASS);
+        HOLLOW_MATERIALS.add(Material.LEGACY_LONG_GRASS);
         HOLLOW_MATERIALS.add(Material.DEAD_BUSH);
-        HOLLOW_MATERIALS.add(Material.YELLOW_FLOWER);
-        HOLLOW_MATERIALS.add(Material.RED_ROSE);
+        HOLLOW_MATERIALS.add(Material.LEGACY_YELLOW_FLOWER);
+        HOLLOW_MATERIALS.add(Material.LEGACY_RED_ROSE);
         HOLLOW_MATERIALS.add(Material.BROWN_MUSHROOM);
         HOLLOW_MATERIALS.add(Material.RED_MUSHROOM);
         HOLLOW_MATERIALS.add(Material.TORCH);
         HOLLOW_MATERIALS.add(Material.REDSTONE_WIRE);
-        HOLLOW_MATERIALS.add(Material.SEEDS);
-        HOLLOW_MATERIALS.add(Material.SIGN_POST);
-        HOLLOW_MATERIALS.add(Material.WOODEN_DOOR);
+        HOLLOW_MATERIALS.add(Material.LEGACY_SEEDS);
+        HOLLOW_MATERIALS.add(Material.LEGACY_SIGN_POST);
+        HOLLOW_MATERIALS.add(Material.LEGACY_WOODEN_DOOR);
         HOLLOW_MATERIALS.add(Material.LADDER);
-        HOLLOW_MATERIALS.add(Material.RAILS);
+        HOLLOW_MATERIALS.add(Material.LEGACY_RAILS);
         HOLLOW_MATERIALS.add(Material.WALL_SIGN);
         HOLLOW_MATERIALS.add(Material.LEVER);
-        HOLLOW_MATERIALS.add(Material.STONE_PLATE);
-        HOLLOW_MATERIALS.add(Material.IRON_DOOR_BLOCK);
-        HOLLOW_MATERIALS.add(Material.WOOD_PLATE);
-        HOLLOW_MATERIALS.add(Material.REDSTONE_TORCH_OFF);
-        HOLLOW_MATERIALS.add(Material.REDSTONE_TORCH_ON);
+        HOLLOW_MATERIALS.add(Material.LEGACY_STONE_PLATE);
+        HOLLOW_MATERIALS.add(Material.LEGACY_IRON_DOOR_BLOCK);
+        HOLLOW_MATERIALS.add(Material.LEGACY_WOOD_PLATE);
+        HOLLOW_MATERIALS.add(Material.LEGACY_REDSTONE_TORCH_OFF);
+        HOLLOW_MATERIALS.add(Material.LEGACY_REDSTONE_TORCH_ON);
         HOLLOW_MATERIALS.add(Material.STONE_BUTTON);
         HOLLOW_MATERIALS.add(Material.SNOW);
-        HOLLOW_MATERIALS.add(Material.SUGAR_CANE_BLOCK);
-        HOLLOW_MATERIALS.add(Material.DIODE_BLOCK_OFF);
-        HOLLOW_MATERIALS.add(Material.DIODE_BLOCK_ON);
+        HOLLOW_MATERIALS.add(Material.LEGACY_SUGAR_CANE_BLOCK);
+        HOLLOW_MATERIALS.add(Material.LEGACY_DIODE_BLOCK_OFF);
+        HOLLOW_MATERIALS.add(Material.LEGACY_DIODE_BLOCK_ON);
         HOLLOW_MATERIALS.add(Material.PUMPKIN_STEM);
         HOLLOW_MATERIALS.add(Material.MELON_STEM);
         HOLLOW_MATERIALS.add(Material.VINE);
-        HOLLOW_MATERIALS.add(Material.FENCE_GATE);
-        HOLLOW_MATERIALS.add(Material.WATER_LILY);
-        HOLLOW_MATERIALS.add(Material.NETHER_WARTS);
+        HOLLOW_MATERIALS.add(Material.LEGACY_FENCE_GATE);
+        HOLLOW_MATERIALS.add(Material.LEGACY_WATER_LILY);
+        HOLLOW_MATERIALS.add(Material.LEGACY_NETHER_WARTS);
 
         try // 1.6 update
         {
-            HOLLOW_MATERIALS.add(Material.CARPET);
+            HOLLOW_MATERIALS.add(Material.LEGACY_CARPET);
         } catch (java.lang.NoSuchFieldError e) {
 
         }
@@ -100,13 +100,13 @@ public class LocationUtil {
 
     public static boolean isBlockDamaging(final World world, final int x, final int y, final int z) {
         final Block below = world.getBlockAt(x, y - 1, z);
-        if (below.getType() == Material.LAVA || below.getType() == Material.STATIONARY_LAVA) {
+        if (below.getType() == Material.LAVA || below.getType() == Material.LEGACY_STATIONARY_LAVA) {
             return true;
         }
         if (below.getType() == Material.FIRE) {
             return true;
         }
-        if (below.getType() == Material.BED_BLOCK) {
+        if (below.getType() == Material.LEGACY_BED_BLOCK) {
             return true;
         }
         if ((!HOLLOW_MATERIALS.contains(world.getBlockAt(x, y, z).getType()))
