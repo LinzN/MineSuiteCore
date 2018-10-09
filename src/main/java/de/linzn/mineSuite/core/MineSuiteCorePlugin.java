@@ -17,23 +17,65 @@ import de.linzn.mineSuite.core.database.mysql.MySQLConnectionSetup;
 import de.linzn.mineSuite.core.listener.BukkitEventListener;
 import de.linzn.mineSuite.core.socket.JClientBungeeListener;
 import de.linzn.mineSuite.core.socket.MineJSocketClient;
+import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.economy.Economy;
 import org.bukkit.event.HandlerList;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MineSuiteCorePlugin extends JavaPlugin {
     private static MineSuiteCorePlugin instance;
     private MineJSocketClient mineJSocketClient;
     private MineConfigs mineConfigs;
+    private Economy econ = null;
+    private Chat chat = null;
 
     public static MineSuiteCorePlugin getInstance() {
         return instance;
     }
+
+    public static Economy getEconomy() {
+        return getInstance().econ;
+    }
+
+    public static Chat getChat() {
+        return getInstance().chat;
+    }
+
+    private void setupChat() {
+        RegisteredServiceProvider<Chat> chatProvider = getServer().getServicesManager()
+                .getRegistration(net.milkbowl.vault.chat.Chat.class);
+        if (chatProvider != null) {
+            chat = chatProvider.getProvider();
+            this.getLogger().info("Using Vault for Chatprovider!");
+        }
+    }
+
+    private boolean setupEconomy() {
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            return false;
+        }
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        if (rsp == null) {
+            return false;
+        }
+        this.econ = rsp.getProvider();
+        return this.econ != null;
+    }
+
 
     @Override
     public void onEnable() {
         instance = this;
         this.mineConfigs = new MineConfigs(this);
         if (MySQLConnectionSetup.create()) {
+            if (!setupEconomy()) {
+                this.getLogger().warning(
+                        String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
+                getServer().getPluginManager().disablePlugin(this);
+                return;
+            }
+            setupChat();
             registerListeners();
             getCommand("minesuite").setExecutor(new VersionCommand());
             this.mineJSocketClient = new MineJSocketClient();

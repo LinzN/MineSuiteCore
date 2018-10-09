@@ -35,4 +35,17 @@ public class JClientBungeeOutput {
         MineSuiteCorePlugin.getInstance().getMineJSocketClient().jClientConnection1.writeOutput("mineSuiteBungee", byteArrayOutputStream.toByteArray());
     }
 
+    public static void send_economy_callback(String accountName, double balance) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        DataOutputStream dataOutputStream = new DataOutputStream(byteArrayOutputStream);
+        try {
+            dataOutputStream.writeUTF("client_request-balance");
+            dataOutputStream.writeUTF(accountName);
+            dataOutputStream.writeDouble(balance);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MineSuiteCorePlugin.getInstance().getMineJSocketClient().jClientConnection1.writeOutput("mineSuiteBungee", byteArrayOutputStream.toByteArray());
+    }
+
 }

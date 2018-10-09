@@ -49,6 +49,10 @@ public class JClientBungeeListener implements IncomingDataListener {
                 String targetServer = in.readUTF();
                 CoreManager.cancelTeleport(playerUUID, targetServer);
             }
+            if (subChannel.equals("server_request-balance")) {
+                String accountName = in.readUTF();
+                CoreManager.get_balance(accountName);
+            }
 
         } catch (IOException e1) {
             e1.printStackTrace();
