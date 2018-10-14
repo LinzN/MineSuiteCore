@@ -63,4 +63,5 @@ public class GeneralLanguage {
     /* Portal */
     public static String portal_SETPORTAL_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Benutze: /setportal [portalName] [portalType] [destination] <portalMaterial>";
     public static String portal_UNSETPORTAL_USAGE = ChatColor.RED + "" + ChatColor.BOLD + "Benutze: /unsetportal [portalName]";
+    public static String portal_NO_SELECTION = ChatColor.RED + "" + ChatColor.BOLD + "Du hast keine Region ausgewählt!";
 }
