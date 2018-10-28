@@ -22,6 +22,6 @@ public class MineJSocketClient {
     public MineJSocketClient() {
         String hostName = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.JSOCKET_HOST;
         int port = MineSuiteCorePlugin.getInstance().getMineConfigs().generalConfig.JSOCKET_PORT;
-        jClientConnection1 = new JClientConnection(hostName, port);
+        jClientConnection1 = new JClientConnection(hostName, port, new BukkitTaskler());
     }
 }
