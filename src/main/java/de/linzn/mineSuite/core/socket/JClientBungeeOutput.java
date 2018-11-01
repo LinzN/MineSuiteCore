@@ -48,4 +48,32 @@ public class JClientBungeeOutput {
         MineSuiteCorePlugin.getInstance().getMineJSocketClient().jClientConnection1.writeOutput("mineSuiteBungee", byteArrayOutputStream.toByteArray());
     }
 
+    public static void request_ip_compare(UUID playerUUID, String firstPlayer, String secondPlayer) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        DataOutputStream dataOutputStream = new DataOutputStream(byteArrayOutputStream);
+        try {
+            dataOutputStream.writeUTF("client_compare-ip");
+            dataOutputStream.writeUTF(playerUUID.toString());
+            dataOutputStream.writeUTF(firstPlayer);
+            dataOutputStream.writeUTF(secondPlayer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MineSuiteCorePlugin.getInstance().getMineJSocketClient().jClientConnection1.writeOutput("mineSuiteBungee", byteArrayOutputStream.toByteArray());
+    }
+    public static void request_last_seen(UUID playerUUID, String targetPlayer) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        DataOutputStream dataOutputStream = new DataOutputStream(byteArrayOutputStream);
+        try {
+            dataOutputStream.writeUTF("client_get-last-seen");
+            dataOutputStream.writeUTF(playerUUID.toString());
+            dataOutputStream.writeUTF(targetPlayer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MineSuiteCorePlugin.getInstance().getMineJSocketClient().jClientConnection1.writeOutput("mineSuiteBungee", byteArrayOutputStream.toByteArray());
+    }
+
+
+
 }

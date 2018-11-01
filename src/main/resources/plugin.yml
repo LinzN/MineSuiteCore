@@ -9,6 +9,8 @@ api-version: 1.13
 commands:
   minesuite:
     description: Suit command
+  mtools:
+    description: Suit command
 permissions:
     mineSuite.team:
         description: Alle User Permissions
@@ -19,10 +21,10 @@ permissions:
             mineSuite.teleport.team: true
             mineSuite.portal.team: true
             mineSuite.chat.team: true
-            mineSuite.guild.team: true
             mineSuite.bypass: true
             mineSuite.ban.notifyinfo: true
             mineSuite.api.command: true
+            mineSuite.tools.all: true
     mineSuite.user:
         description: Alle User Permissions
         children:
@@ -33,6 +35,12 @@ permissions:
             mineSuite.portal.user: true
             mineSuite.chat.user: true
             mineSuite.api.command: true
+    mineSuite.tools.all:
+        description: Alle User Permissions
+        children:
+            mineSuite.tools.help: true
+            mineSuite.tools.checkip: true
+            mineSuite.tools.lastseen: true
     mineSuite.bypass:
         description: Bypass permission
         default: op
@@ -40,5 +48,14 @@ permissions:
         description: Baninfo permission
         default: op
     mineSuite.api.command:
+        description: Baninfo permission
+        default: op
+    mineSuite.tools.help:
+        description: Baninfo permission
+        default: op
+    mineSuite.tools.checkip:
+        description: Baninfo permission
+        default: op
+    mineSuite.tools.lastseen:
         description: Baninfo permission
         default: op

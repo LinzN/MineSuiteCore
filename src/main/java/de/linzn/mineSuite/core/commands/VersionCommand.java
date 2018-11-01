@@ -32,11 +32,11 @@ public class VersionCommand implements CommandExecutor {
             Plugin corePlugin = Bukkit.getPluginManager().getPlugin("MineSuiteCore");
             Plugin ban = Bukkit.getPluginManager().getPlugin("MineSuiteBan");
             Plugin chat = Bukkit.getPluginManager().getPlugin("MineSuiteChat");
-            Plugin guild = Bukkit.getPluginManager().getPlugin("MineSuiteGuild");
             Plugin home = Bukkit.getPluginManager().getPlugin("MineSuiteHome");
             Plugin portal = Bukkit.getPluginManager().getPlugin("MineSuitePortal");
             Plugin teleport = Bukkit.getPluginManager().getPlugin("MineSuiteTeleport");
             Plugin warp = Bukkit.getPluginManager().getPlugin("MineSuiteWarp");
+            Plugin guild = Bukkit.getPluginManager().getPlugin("MineGuildConnector");
             sender.sendMessage(ChatColor.DARK_PURPLE + "MineSuite Version:");
 
 
@@ -51,10 +51,6 @@ public class VersionCommand implements CommandExecutor {
             if (chat != null) {
                 sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteChat: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
                         + chat.getDescription().getVersion());
-            }
-            if (guild != null) {
-                sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteGuild: " + ChatColor.DARK_PURPLE
-                        + ChatColor.BOLD + guild.getDescription().getVersion());
             }
             if (home != null) {
                 sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteHome: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
@@ -71,6 +67,10 @@ public class VersionCommand implements CommandExecutor {
             if (warp != null) {
                 sender.sendMessage(ChatColor.DARK_GREEN + "MineSuiteWarp: " + ChatColor.DARK_PURPLE + ChatColor.BOLD
                         + warp.getDescription().getVersion());
+            }
+            if (guild != null) {
+                sender.sendMessage(ChatColor.DARK_GREEN + "MineGuildConnector: " + ChatColor.DARK_PURPLE
+                        + ChatColor.BOLD + guild.getDescription().getVersion());
             }
 
             sender.sendMessage(ChatColor.GREEN + "Written with love by Kekshaus");

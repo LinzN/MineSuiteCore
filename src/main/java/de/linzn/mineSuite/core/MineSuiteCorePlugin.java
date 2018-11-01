@@ -11,6 +11,7 @@
 
 package de.linzn.mineSuite.core;
 
+import de.linzn.mineSuite.core.commands.MToolCommand;
 import de.linzn.mineSuite.core.commands.VersionCommand;
 import de.linzn.mineSuite.core.configurations.MineConfigs;
 import de.linzn.mineSuite.core.database.mysql.MySQLConnectionSetup;
@@ -78,6 +79,10 @@ public class MineSuiteCorePlugin extends JavaPlugin {
             setupChat();
             registerListeners();
             getCommand("minesuite").setExecutor(new VersionCommand());
+            MToolCommand mToolCommand = new MToolCommand(this);
+            if (!mToolCommand.isLoaded())
+                mToolCommand.loadCmd();
+            getCommand("mtools").setExecutor(mToolCommand);
             this.mineJSocketClient = new MineJSocketClient();
             this.mineJSocketClient.jClientConnection1.setEnable();
             this.mineJSocketClient.jClientConnection1.registerIncomingDataListener("mineSuiteBungee", new JClientBungeeListener());
