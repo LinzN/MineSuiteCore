@@ -23,6 +23,7 @@ public class GeneralConfig {
 
     public String JSOCKET_HOST;
     public int JSOCKET_PORT;
+    public double VOTE_REWARD;
 
 
     public String SQL_HOST;
@@ -39,6 +40,8 @@ public class GeneralConfig {
 
         JSOCKET_HOST = (String) generalConfig.getConfigValue("jSocket.hostname", "localhost");
         JSOCKET_PORT = (int) generalConfig.getConfigValue("jSocket.port", 9090);
+
+        VOTE_REWARD = (double) generalConfig.getConfigValue("vote.reward", 150D);
 
         SQL_HOST = (String) generalConfig.getConfigValue("mysql.hostname", "localhost");
         SQL_PORT = (int) generalConfig.getConfigValue("mysql.port", 3306);
