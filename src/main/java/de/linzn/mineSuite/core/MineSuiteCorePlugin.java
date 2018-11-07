@@ -30,6 +30,7 @@ public class MineSuiteCorePlugin extends JavaPlugin {
     private MineConfigs mineConfigs;
     private Economy econ = null;
     private Chat chat = null;
+    private boolean debugMode = false;
 
     public static MineSuiteCorePlugin getInstance() {
         return instance;
@@ -107,6 +108,14 @@ public class MineSuiteCorePlugin extends JavaPlugin {
 
     public MineJSocketClient getMineJSocketClient() {
         return mineJSocketClient;
+    }
+
+    public boolean getDebugMode() {
+        return this.debugMode;
+    }
+
+    public void setDebugMode(boolean debugMode) {
+        this.debugMode = debugMode;
     }
 
 }

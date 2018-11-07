@@ -19,4 +19,9 @@ public class BukkitTaskler implements ThreadTaskler {
     public void runSingleThreadExecutor(Runnable runnable) {
         Bukkit.getScheduler().runTaskAsynchronously(MineSuiteCorePlugin.getInstance(), runnable);
     }
+
+    @Override
+    public boolean isDebugging() {
+        return MineSuiteCorePlugin.getInstance().getDebugMode();
+    }
 }
