@@ -64,6 +64,7 @@ public class MToolCommand implements CommandExecutor {
             this.cmdMap.put("help", new MTools_HELP(this.plugin, "mineSuite.tools.help"));
             this.cmdMap.put("checkip", new MTools_CHECKIP(this.plugin, "mineSuite.tools.checkip"));
             this.cmdMap.put("lastseen", new MTools_LASTSEEN(this.plugin, "mineSuite.tools.lastseen"));
+            this.cmdMap.put("debug", new MTools_DEBUG(this.plugin, "mineSuite.tools.debug"));
             this.isLoaded = true;
         } catch (Exception e) {
             e.printStackTrace();

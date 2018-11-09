@@ -41,6 +41,7 @@ permissions:
             mineSuite.tools.help: true
             mineSuite.tools.checkip: true
             mineSuite.tools.lastseen: true
+            mineSuite.tools.debug: true
     mineSuite.bypass:
         description: Bypass permission
         default: op
@@ -57,5 +58,8 @@ permissions:
         description: Baninfo permission
         default: op
     mineSuite.tools.lastseen:
+        description: Baninfo permission
+        default: op
+    mineSuite.tools.debug:
         description: Baninfo permission
         default: op

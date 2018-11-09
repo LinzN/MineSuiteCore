@@ -42,6 +42,7 @@ public class MTools_HELP implements ICommand {
             if (args[1].equalsIgnoreCase("2")) {
                 player.sendMessage(("§6§lCommon help: "));
                 player.sendMessage(" §2Compare IP: §e/mtools checkip <firstPlayer> <secondPlayer>");
+                player.sendMessage(" §2Switch Debugging: §e/mtools debug");
                 return true;
             }
         }
