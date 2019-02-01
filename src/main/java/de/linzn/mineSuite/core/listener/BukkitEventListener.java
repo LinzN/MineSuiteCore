@@ -12,11 +12,16 @@
 package de.linzn.mineSuite.core.listener;
 
 import de.linzn.mineSuite.core.database.hashDatabase.PendingTeleportsData;
+import de.linzn.mineSuite.core.utils.LanguageDB;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Statistic;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
+import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class BukkitEventListener implements Listener {
@@ -35,5 +40,13 @@ public class BukkitEventListener implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent event) {
         PendingTeleportsData.cleanPlayer(event.getPlayer().getUniqueId());
+    }
+
+    @EventHandler
+    public void onPlayerBedEnterEvent(PlayerBedEnterEvent event)
+    {
+        Player p = event.getPlayer();
+        p.setStatistic(Statistic.TIME_SINCE_REST,0);
+        p.sendMessage(LanguageDB.SLEED_BED_TIMER);
     }
 }

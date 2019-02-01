@@ -8,4 +8,5 @@ public class LanguageDB {
     public static String NO_CONSOLE = ChatColor.DARK_RED + "Dies geht nur ingame!";
     public static String NO_COMMAND = ChatColor.DARK_RED + "Dies ist kein gültiger Befehl. Gib {command} für Hilfe ein!";
     public static String COMMAND_USAGE = ChatColor.RED + "Benutze: {command}";
+    public static String SLEED_BED_TIMER = ChatColor.GREEN + "Dein Schlaftimer wurde zurückgesetzt!";
 }
