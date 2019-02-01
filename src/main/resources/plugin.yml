@@ -4,7 +4,7 @@ version: ${project.version}
 description: Suite for BungeeCord
 author: Kekshaus
 load: POSTWORLD
-depend: [Vault]
+depend: [Vault, MineLib]
 api-version: 1.13
 commands:
   minesuite:

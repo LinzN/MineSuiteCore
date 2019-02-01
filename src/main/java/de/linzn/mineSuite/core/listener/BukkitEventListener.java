@@ -11,6 +11,8 @@
 
 package de.linzn.mineSuite.core.listener;
 
+import de.linzn.mineLib.MineLibPlugin;
+import de.linzn.mineLib.actionBar.MineActionBar;
 import de.linzn.mineSuite.core.database.hashDatabase.PendingTeleportsData;
 import de.linzn.mineSuite.core.utils.LanguageDB;
 import org.bukkit.Bukkit;
@@ -42,11 +44,13 @@ public class BukkitEventListener implements Listener {
         PendingTeleportsData.cleanPlayer(event.getPlayer().getUniqueId());
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onPlayerBedEnterEvent(PlayerBedEnterEvent event)
     {
-        Player p = event.getPlayer();
-        p.setStatistic(Statistic.TIME_SINCE_REST,0);
-        p.sendMessage(LanguageDB.SLEED_BED_TIMER);
+        if(!event.isCancelled()) {
+            Player p = event.getPlayer();
+            p.setStatistic(Statistic.TIME_SINCE_REST, 0);
+            new MineActionBar(LanguageDB.SLEED_BED_TIMER).send(p);
+        }
     }
 }
