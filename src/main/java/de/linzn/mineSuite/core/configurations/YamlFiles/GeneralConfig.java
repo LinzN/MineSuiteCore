@@ -20,6 +20,7 @@ public class GeneralConfig {
 
     public String BUNGEE_SERVER_NAME;
     public List<String> DISABLED_WORLDS;
+    public List<String> VOID_DISABLED_WORLDS;
 
     public String JSOCKET_HOST;
     public int JSOCKET_PORT;
@@ -37,6 +38,10 @@ public class GeneralConfig {
         List<String> worldList = new ArrayList<>();
         worldList.add("disabledWorld");
         DISABLED_WORLDS = (List<String>) generalConfig.getConfigValue("general.disabledWorlds", worldList);
+
+        List<String> voidWorldList = new ArrayList<>();
+        voidWorldList.add("voidWorldList");
+        VOID_DISABLED_WORLDS = (List<String>) generalConfig.getConfigValue("general.disabledVoidWorldList", voidWorldList);
 
         JSOCKET_HOST = (String) generalConfig.getConfigValue("jSocket.hostname", "localhost");
         JSOCKET_PORT = (int) generalConfig.getConfigValue("jSocket.port", 9090);
