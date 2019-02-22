@@ -5,44 +5,66 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.UUID;
 
 public class RequestMojangAPI {
-    public String fetchName(UUID uuid) {
-        JSONObject jsonObject = (JSONObject) getJSONArray("https://api.mojang.com/user/profiles/" + uuid.toString() + "/names").get(1);
+    public static String fetchName(UUID uuid) {
+        JSONArray jsonArray = (JSONArray) getJSON("https://api.mojang.com/user/profiles/" + convertDefaultUUIDToTrim(uuid) + "/names");
+        if (jsonArray == null) {
+            return null;
+        }
+        JSONObject jsonObject = (JSONObject) jsonArray.get(0);
+
+        if (jsonObject == null) {
+            return null;
+        }
+
         return (String) jsonObject.get("name");
     }
 
-    public UUID fetchUUID(String playerName) {
-        return UUID.fromString((String) getJSONObject("https://api.mojang.com/users/profiles/minecraft/" + playerName).get("id"));
+    public static UUID fetchUUID(String playerName) {
+        JSONObject jsonObject = (JSONObject) getJSON("https://api.mojang.com/users/profiles/minecraft/" + playerName);
+        if (jsonObject == null) {
+            return null;
+        }
+        String uuidAsString = (String) jsonObject.get("id");
+
+        if (uuidAsString == null) {
+            return null;
+        }
+
+        return convertTrimUUIDToDefault(uuidAsString);
     }
 
-    private static JSONObject getJSONObject(String sURL) {
-        JSONObject obj = null;
+    private static Object getJSON(String sURL) {
+        JSONParser parser = new JSONParser();
         try {
-            URL url = new URL(sURL);
-            URLConnection request = url.openConnection();
-            request.connect();
-            obj = (JSONObject) new JSONParser().parse(new InputStreamReader((InputStream) request.getContent()));
-        } catch (ParseException | IOException ignored) {
+            URL uri = new URL(sURL);
+            URLConnection ec = uri.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                    ec.getInputStream(), "UTF-8"));
+            String inputLine;
+            StringBuilder a = new StringBuilder();
+            while ((inputLine = in.readLine()) != null)
+                a.append(inputLine);
+            in.close();
+            return parser.parse(a.toString());
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
         }
-        return obj;
+        return null;
     }
 
-    private static JSONArray getJSONArray(String sURL) {
-        JSONArray arr = null;
-        try {
-            URL url = new URL(sURL);
-            URLConnection request = url.openConnection();
-            request.connect();
-            arr = (JSONArray) new JSONParser().parse(new InputStreamReader((InputStream) request.getContent()));
-        } catch (ParseException | IOException ignored) {
-        }
-        return arr;
+    private static UUID convertTrimUUIDToDefault(String uuid) {
+        return UUID.fromString(uuid.length() == 32 ? uuid.substring(0, 8) + '-' + uuid.substring(8, 12) + '-' + uuid.substring(12, 16) + '-' + uuid.substring(16, 20) + '-' + uuid.substring(20) : uuid);
+    }
+
+    private static String convertDefaultUUIDToTrim(UUID uuid) {
+        return uuid.toString().replace("-", "");
     }
 }
