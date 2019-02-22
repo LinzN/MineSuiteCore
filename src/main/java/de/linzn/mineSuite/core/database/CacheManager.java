@@ -21,11 +21,15 @@ public class CacheManager {
 
         UUID playerUUID = BukkitQuery.getUUID(playerName);
 
+        if (playerUUID != null) {
+            playerCache.put(playerUUID, playerName);
+            return playerUUID;
+        } else {
+            playerUUID = new RequestMojangAPI().fetchUUID(playerName);
+        }
+
         if (playerUUID == null) {
             playerUUID = Bukkit.getOfflinePlayer(playerName).getUniqueId();
-        }
-        if (playerUUID == null) {
-            playerUUID = new RequestMojangAPI().fetchUUID(playerName);
         }
 
         if (playerUUID != null) {
@@ -48,11 +52,15 @@ public class CacheManager {
         }
         String playerName = BukkitQuery.getPlayerName(playerUUID);
 
+        if (playerName != null) {
+            playerCache.put(playerUUID, playerName);
+            return playerName;
+        } else {
+            playerName = new RequestMojangAPI().fetchName(playerUUID);
+        }
+
         if (playerName == null) {
             playerName = Bukkit.getOfflinePlayer(playerUUID).getName();
-        }
-        if (playerName == null) {
-            playerName = new RequestMojangAPI().fetchName(playerUUID);
         }
 
         if (playerName != null) {

@@ -13,7 +13,8 @@ import java.net.URLConnection;
 import java.util.UUID;
 
 public class RequestMojangAPI {
-    public static String fetchName(UUID uuid) {
+
+    public String fetchName(UUID uuid) {
         JSONArray jsonArray = (JSONArray) getJSON("https://api.mojang.com/user/profiles/" + convertDefaultUUIDToTrim(uuid) + "/names");
         if (jsonArray == null) {
             return null;
@@ -27,7 +28,7 @@ public class RequestMojangAPI {
         return (String) jsonObject.get("name");
     }
 
-    public static UUID fetchUUID(String playerName) {
+    public UUID fetchUUID(String playerName) {
         JSONObject jsonObject = (JSONObject) getJSON("https://api.mojang.com/users/profiles/minecraft/" + playerName);
         if (jsonObject == null) {
             return null;
@@ -54,8 +55,7 @@ public class RequestMojangAPI {
                 a.append(inputLine);
             in.close();
             return parser.parse(a.toString());
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
+        } catch (IOException | ParseException ignored) {
         }
         return null;
     }
