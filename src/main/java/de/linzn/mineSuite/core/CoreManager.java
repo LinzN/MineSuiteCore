@@ -58,9 +58,4 @@ public class CoreManager {
             }
         }
     }
-
-    public static void get_balance(String accountName){
-        double balance = MineSuiteCorePlugin.getEconomy().getBalance(accountName);
-        JClientBungeeOutput.send_economy_callback(accountName, balance);
-    }
 }
